@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .title {
+                width: 100%;
+                position: absolute;
+                top: 100px;
+                list-style: none;
+                border-bottom: 4px solid#3C3C3C;
+                display: flex;
+            }
+
+            .biglogo {
+                width: auto;
+                position: absolute;
+                left: 20px;
+                top: -70px;
+            }
+
+            .intro {
+                width: 520px;
+                font-size: 16px;
+                display: flex;
+                position: absolute;
+                top: -55px;
+                left: 335px;
+                font-weight: bold;
+            }
+
+            .title ul {
+                display: inline-block;
+            }
+
+            .intro a {
+                margin: 3px;
+                text-decoration: none;
+                font-family: Helvetica, Verdana, Arial, "\5FAE\8EDF\6B63\9ED1\9AD4", "Microsoft JhengHei", "\5137\9ED1 Pro", "LiHei Pro", sans-serif;
+                color: #333;
+                letter-spacing: .5px;
+            }
+
+            .intro a::after {
+                content: '|';
+                margin: 10px;
+                color: black;
+                position: relative;
+                left: 5px;
+            }
+
+            .intro a:last-child::after {
+                display: none;
+            }
+
+            .intro a:hover {
+                color: red;
+            }
+
+            .minilogo {
+                width: 300px;
+                position: absolute;
+                top: -70px;
+                right: 0px;
+            }
+
+            .minilogo img {
+                margin: 5px;
+            }
+
+            .title1 {
+                width: 100%;
+                height: 100px;
+                background: black;
+                position: absolute;
+                top: 100px;
+                margin-bottom: 100px;
+            }
+
+            .subtitle1 {
+                margin: auto;
+                text-align: center;
+                line-height: 100px;
+            }
+
+            .subtitle1 a {
+                width: 100px;
+                font-size: 15px;
+                color: white;
+                font-family: Helvetica, Verdana, Arial, 微軟正黑體, "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", sans-serif;
+                text-decoration: none;
+                margin: 50px;
+            }
+
+            .subtitle1 a:hover {
+                text-decoration: underline;
+            }
+
+            .title2 {
+                width: 100%;
+                height: 100px;
+                background: white;
+                position: absolute;
+                top: 200px;
+                margin-bottom: 100px;
+            }
+
+            .subtitle2 {
+                margin: auto;
+                text-align: center;
+                line-height: 100px;
+            }
+
+            .subtitle2 a {
+                font-size: 18px;
+                color: black;
+                font-family: Helvetica, Verdana, Arial, 微軟正黑體, "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", sans-serif;
+                text-decoration: none;
+                margin: 45px;
+                font-weight: bolder;
+                border-top: 2px solid black;
+                border-left: 2px solid black;
+                border-right: 2px solid black;
+                border-style: dotted;
+                border-bottom: 3px solid #ae0014;
+                transition: .5s;
+            }
+
+            .subtitle2 a:hover {
+                background-color: #ae0014;
+            }
+
+            .little {
+                font-size: 40px;
+                font-weight: bolder;
+                position: relative;
+                top: 20px;
+            }
+
+            .little::after {
+                content: '__';
+                font-weight: bolder;
+                position: absolute;
+                top: 20px;
+                left: 595px;
+            }
+
+            .wrap {
+                width: 960px;
+                margin: auto;
+            }
+
+            .group {
+                width: 100%;
+                margin-top: 270px;
+                position: relative;
+                top: 100px;
+                left: 80px;
+            }
+
+            .group1 {
+                width: 100%;
+                position: relative;
+                top: 10px;
+                left: 100px;
+            }
+
+            .i1 {
+                width: 280px;
+                position: relative;
+                left: -95px;
+                top: 100px;
+                z-index: 1;
+            }
+
+            .i4 {
+                width: 280px;
+                position: relative;
+                right: -550px;
+                z-index: 1;
+            }
+
+            .i2 {
+                width: 600px;
+                position: relative;
+                left: 100px;
+                top: -150px;
+                z-index: 0;
+            }
+
+            .i5 {
+                width: 660px;
+                position: relative;
+                top: -160px;
+                left: -60px;
+                z-index: 0;
+            }
+
+            .gray1 {
+                width: 450px;
+                height: 290px;
+                background-color: #eeeeee;
+                position: absolute;
+                right: -180px;
+                top: -110px;
+                z-index: -2;
+            }
+
+            .gray2 {
+                width: 519px;
+                height: 360px;
+                background-color: #eeeeee;
+                position: absolute;
+                right: -80px;
+                top: -30px;
+                z-index: -2;
+            }
+
+            .i3 {
+                width: 500px;
+                position: relative;
+                left: 30px;
+                top: -170px;
+                z-index: 1;
+                margin-bottom: 100px;
+            }
+
+            .i6 {
+                width: 500px;
+                position: relative;
+                top: -200px;
+                right: -220px;
+                z-index: 1;
+            }
+
+            .play1 {
+                position: absolute;
+                right: -108px;
+                top: 200px;
+            }
+
+            .play2 {
+                position: absolute;
+                top: 225px;
+                left: -10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="title">
+            <div class="biglogo">
+                <a href="#">
+                    <img src="pic/logo.png" alt="Toyota logo">
+                </a>
+            </div>
+            <div class="intro">
+                <ul>
+                    <a href="#"><strong>車款展示間</strong></a>
+                    <a href="#"><strong>購車服務</strong></a>
+                    <a href="#"><strong>品牌新知</strong></a>
+                    <a href="#"><strong>安全/科技</strong></a>
+                    <a href="#"><strong>車主專區</strong></a>
+                </ul>
+            </div>
+            <div class="minilogo">
+                <a href="#"><img src="pic/icon-tgr.png_e9ce3b60" alt="Toyota gr"></a>
+                <a href="https://zh-tw.facebook.com/">
+                    <img src="pic/facebookicon" alt="facebook">
+                </a>
+                <a href="https://www.instagram.com/?hl=zh-tw">
+                    <img src="pic/igicon" alt="ig">
+                </a>
+                <a href="https://www.youtube.com/?gl=TW">
+                    <img src="pic/youtubeicon" alt="youtube">
+                </a>
+            </div>
+        </div>
+        <div class="title1">
+            <div class="subtitle1">
+                <ul>
+                    <a href="#">核心理念</a>
+                    <a href="#">五大優勢</a>
+                    <a href="#">46 THINGS</a>
+                    <a href="#">影片演示</a>
+                    <a href="#">搭載車款</a>
+                </ul>
+            </div>
+        </div>
+        <div class="title2">
+            <div class="subtitle2">
+                <div class="little">五大優勢</div>
+                <ul>
+                    <a href="#">操控樂趣</a>
+                    <a href="#">安全守護</a>
+                    <a href="#">乘坐舒適</a>
+                    <a href="#">以人為本</a>
+                    <a href="#">引以為傲</a>
+                </ul>
+                <div class="div1"></div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="group">
+                <div class="item i1">
+                    <img src="pic/asset 57.png" alt="第一項">
+                </div>
+                <div class="item i2">
+                    <img src="pic/asset 55.png" alt="車">
+                    <div class="play1">
+                        <a href="#"><img src="pic/asset 56.png" alt="按鈕"></a>
+                    </div>
+                    <div class="gray1"></div>
+                </div>
+                <div class="item i3">
+                    <img src="pic/asset 58.png" alt="功能說明">
+                </div>
+            </div>
+            <div class="group1">
+                <div class="item i4">
+                    <img src="pic/asset 60.png" alt="第二項">
+                </div>
+                <div class="item i5">
+                    <img src="pic/asset 59.png" alt="女人">
+                    <div class="gray2"></div>
+                    <div class="play2">
+                        <a href="#"><img src="pic/asset 56.png" alt="按鈕"></a>
+                    </div>
+                </div>
+                <div class="item i6">
+                    <img src="pic/asset 61.png" alt="安全守護">
+                </div>
+            </div>
+            <div class="group">
+                <div class="item i1">
+                    <img src="pic/asset 63.png" alt="第三項">
+                </div>
+                <div class="item i2">
+                    <img src="pic/asset 62.png" alt="男人">
+                    <div class="gray1"></div>
+                    <div class="play1">
+                        <a href="#"><img src="pic/asset 56.png" alt="按鈕"></a>
+                    </div>
+                </div>
+                <div class="item i3">
+                    <img src="pic/asset 64.png" alt="舒適">
+                </div>
+            </div>
+            <div class="group1">
+                <div class="item i4">
+                    <img src="pic/asset 66.png" alt="第四項">
+                </div>
+                <div class="item i5">
+                    <img src="pic/asset 65.png" alt="手1">
+                    <div class="gray2"></div>
+                    <div class="play2">
+                        <a href="#">
+                            <img src="pic/asset 56.png" alt="按鈕">
+                        </a>
+                    </div>
+                </div>
+                <div class="item i6">
+                    <img src="pic/asset 67.png" alt="">
+                </div>
+            </div>
+            <div class="group">
+                <div class="item i1">
+                    <img src="pic/asset 69.png" alt="第五項"></div>
+                <div class="item i2">
+                    <img src="pic/asset 68.png" alt="手2">
+                    <div class="gray1"></div>
+                    <div class="play1">
+                        <a href="#"><img src="pic/asset 56.png" alt="按鈕"></a>
+                    </div>
+                </div>
+                <div class="item i3">
+                    <img src="pic/asset 70.png" alt="精心設計">
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+
+</html>
