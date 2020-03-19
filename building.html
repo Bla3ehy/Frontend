@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-decoration: none;
+            }
+
+            .blackTitle {
+                width: 1295px;
+                background-color: black;
+                padding: 7px 15px;
+                z-index: 1;
+                display: flex;
+            }
+
+            .address {
+                width: 371.86px;
+                height: 62px;
+                padding: 9px 0px 5px 2px;
+                overflow: hidden;
+                box-sizing: border-box;
+                text-align: left;
+                color: white;
+                justify-content: flex-start;
+                font-weight: 300;
+                font-family: Roboto, sans-serif;
+                font-size: 14.94px;
+            }
+
+            .address img {
+                line-height: 1;
+                box-sizing: border-box;
+                margin-top: 2px;
+            }
+
+            .location_text {
+                width: 351.11px;
+                margin-left: 10px;
+                padding-left: 5px;
+                align-self: center;
+                box-sizing: border-box;
+                line-height: 24px;
+                position: absolute;
+                font-style: normal;
+            }
+
+            .telephone {
+                width: 451.45px;
+                height: 62px;
+                align-content: center;
+                box-sizing: border-box;
+                font-size: 14.94px;
+                font-family: Roboto, sans-serif;
+                padding: 9px 0px 5px 2px;
+                overflow: hidden;
+                justify-content: flex-start;
+                color: white;
+            }
+
+            .telephone img {
+                margin-top: 2px;
+            }
+
+            .telephone_text {
+                width: 351.11px;
+                margin-left: 2px;
+                padding-left: 10px;
+                align-self: center;
+                position: absolute;
+                box-sizing: border-box;
+                line-height: 24px;
+                font-style: "Lato", Sans-serif;
+                ;
+                color: white;
+                font-weight: 300;
+                cursor: pointer;
+            }
+
+            .littlelogo_wrap {
+                width: 100%px;
+                height: 62px;
+                justify-content: right;
+                align-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                overflow: hidden;
+                text-align: left;
+                display: flex;
+
+            }
+
+            .littlelogo {
+                width: 420.66px;
+                height: 30px;
+                text-align: right;
+                margin: auto;
+                position: absolute;
+                right: 50px;
+            }
+
+            .facebook {
+                width: 9.38px;
+                height: 15px;
+                margin-right: 9.5px;
+                padding-top: 7.5px;
+                padding-bottom: 7.5px;
+            }
+
+            .twitter {
+                width: 15px;
+                height: 15px;
+                margin-right: 9.5px;
+                padding-top: 7.5px;
+                padding-bottom: 7.5px;
+
+            }
+
+            .verter {
+                width: 13.13px;
+                height: 15px;
+                margin-right: 9.5px;
+                padding-top: 7.5px;
+                padding-bottom: 7.5px;
+            }
+
+            .youtube {
+                width: 16.88px;
+                height: 15px;
+                margin-right: 9.5px;
+                padding-top: 7.5px;
+                padding-bottom: 7.5px;
+            }
+
+            .pinter {
+                width: 14.53px;
+                height: 15px;
+                margin-right: 9.5px;
+                padding-top: 7.5px;
+                padding-bottom: 7.5px;
+            }
+
+            .ig {
+                width: 13.13px;
+                height: 15px;
+                margin-right: 9.5px;
+                padding-top: 7.5px;
+                padding-bottom: 7.5px;
+            }
+
+            .subtitle {
+                width: 1295px;
+                height: 130px;
+                padding: 20px 0px 20px 0px;
+                z-index: 1;
+                display: flex;
+
+                /* background: yellow; */
+            }
+
+            .companyLogo_wrap {
+                width: 328.89px;
+                height: 90px;
+                padding: 20px;
+            }
+
+            .companyLogo {
+                width: 298.89px;
+                height: 70px;
+                margin: auto;
+                position: relative;
+                left: -18px;
+                top: -15px;
+            }
+
+            .menu_wrap {
+                width: 809.59px;
+                height: 90px;
+                align-content: center;
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+                overflow: hidden;
+            }
+
+            .menu {
+                width: 809.59px;
+                height: 27px;
+                justify-content: center;
+                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+                margin: auto;
+            }
+
+            .menu a {
+                font-family: "Montserrat", Sans-serif;
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 0.7px;
+                margin-right: 30px;
+                color: white;
+            }
+
+            .search_wrap {
+                width: 126.44px;
+                height: 90px;
+                align-content: center;
+                align-items: center;
+                display: flex;
+            }
+
+            .search {
+                width: 126.44px;
+                height: 50px;
+                justify-content: right;
+                text-align: right;
+            }
+
+            .magnify {
+                width: 36px;
+                height: 34.2px;
+                position: relative;
+                right: 70px;
+                top: 6px;
+            }
+
+            .slider {
+                width: 1295px;
+                height: 950px;
+                margin: auto;
+                margin-bottom: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .slider_group_picture img {
+                width: 1295px;
+                height: 950px;
+                position: absolute;
+                left: 0%;
+                right: -28px;
+                top: 0px;
+                bottom: 0px;
+                z-index: -2;
+                visibility: visible;
+
+            }
+
+            .slider_content {
+                width: 1295px;
+                height: 411px;
+                display: inline-flex;
+                align-items: start;
+                z-index: 1;
+                margin-top: -200px;
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            .slider_content .title {
+                width: 1295px;
+                text-align: center;
+                padding: 0px 0px 15px 0px;
+                margin: 0;
+                color: #ffffff;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 110px;
+                font-weight: 700;
+                letter-spacing: 5.6px;
+            }
+
+            .slider_content .subtitle {
+                width: 1295px;
+                height: 50px;
+                text-align: center;
+                font-size: 30px;
+                font-weight: 400;
+                line-height: 50px;
+                letter-spacing: 0.2px;
+                padding: 0px 0px -0px 250px;
+                margin-top: -100px;
+                color: #ffffff;
+            }
+
+            .slider_content_button {
+                width: 1265px;
+                height: 60px;
+                text-align: center;
+                margin-top: -110px;
+            }
+
+            .slider_content_button button {
+                width: 284.3px;
+                height: 60px;
+                padding: 22px 38px 22px 39px;
+                background: #2ac5f4;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 14px;
+                letter-spacing: 0.06px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #2ac5f4;
+                border-radius: 3px 3px 3px 3px;
+            }
+
+            .slider_content_button a {
+                color: #ffffff;
+            }
+
+            .arrowLeft {
+                width: 40px;
+                height: 40px;
+                align-items: center;
+                position: absolute;
+                top: 500px;
+                left: 50px;
+            }
+
+            .arrowRight {
+                width: 40px;
+                height: 40px;
+                align-items: center;
+                position: absolute;
+                top: 500px;
+                right: 50px;
+            }
+
+            .three_dots {
+                width: 1265px;
+                text-align: center;
+                align-items: center;
+                position: absolute;
+                bottom: -277px;
+                padding-bottom: 150px;
+            }
+
+            .three_dots button {
+                width: 14px;
+                height: 14px;
+                border: 2px solid #000;
+                border-radius: 50%;
+                border-style: solid;
+                border-color: rgba(0, 0, 0, 0);
+                margin: 4px;
+                cursor: pointer;
+            }
+
+            .companyServices {
+                width: 1295px;
+                height: 816px;
+                margin: 0px;
+                margin-top: -246px;
+                padding: 85px 0px 70px 0px;
+            }
+
+            .divider {
+                width: 1295px;
+                height: 62px;
+                padding-top: 30px;
+                text-align: center;
+                margin: auto;
+            }
+
+            .headingTitle {
+                width: 1295px;
+                height: 42px;
+                text-align: center;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 42px;
+                letter-spacing: 1.8px;
+            }
+
+            .rowservices_top {
+                width: 1265px;
+                height: 271px;
+                display: flex;
+                box-sizing: border-box;
+            }
+
+            .house_wrap {
+                width: 421.66px;
+                height: 271px;
+            }
+
+            .box_wrap {
+                width: 421.66px;
+                height: 271px;
+            }
+
+            .sixdots_wrap {
+                width: 421.66px;
+                height: 271px;
+
+            }
+
+            .house {
+                width: 371.66px;
+                height: 213px;
+                align-items: flex-start;
+                text-align: left;
+                display: flex;
+                margin: auto;
+                margin-top: 29px;
+                margin-bottom: 29px;
+            }
+
+            .house_text {
+                width: 271.66px;
+                height: 213px;
+                flex-wrap: wrap;
+                text-align: start;
+                padding-top: 20px;
+                margin: 20px;
+                text-align: left;
+            }
+
+            .house img {
+                margin-top: 15px;
+            }
+
+            .house h2 {
+                height: 56px;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 34px;
+            }
+
+            .house p {
+                width: 271.66px;
+                height: 120px;
+                display: block;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                letter-spacing: 0px;
+                margin-top: 20px;
+            }
+
+            .box {
+                width: 371.66px;
+                height: 213px;
+                align-items: flex-start;
+                text-align: left;
+                display: flex;
+                margin: auto;
+                margin-top: 29px;
+                margin-bottom: 29px;
+            }
+
+            .box_text {
+                width: 271.66px;
+                height: 213px;
+                flex-wrap: wrap;
+                text-align: start;
+                padding-top: 20px;
+                margin: 20px;
+            }
+
+            .box img {
+                margin-top: 15px;
+            }
+
+            .box h2 {
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 34px;
+            }
+
+            .box p {
+                width: 260.66px;
+                height: 180px;
+                display: block;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+
+            .sixdots {
+                width: 371.66px;
+                height: 213px;
+                align-items: flex-start;
+                text-align: left;
+                display: flex;
+                margin: auto;
+                margin-top: 29px;
+                margin-bottom: 29px;
+            }
+
+            .sixdots img {
+                margin-top: 15px;
+            }
+
+            .sixdots_text {
+                width: 271.66px;
+                height: 213px;
+                flex-wrap: wrap;
+                text-align: start;
+                padding-top: 20px;
+                margin: 20px;
+                text-align: left;
+            }
+
+            .sixdots h2 {
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 34px;
+            }
+
+            .sixdots p {
+                width: 260.66px;
+                height: 180px;
+                display: block;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+
+            .rowservices_bottom {
+                width: 1265px;
+                height: 271px;
+                display: flex;
+                box-sizing: border-box;
+            }
+
+            .pencil_wrap {
+                width: 421.66px;
+                height: 271px;
+            }
+
+            .apartment_wrap {
+                width: 421.66px;
+                height: 271px;
+            }
+
+            .telebook_wrap {
+                width: 421.66px;
+                height: 271px;
+            }
+
+            .pencil {
+                width: 371.66px;
+                height: 213px;
+                align-items: flex-start;
+                text-align: left;
+                display: flex;
+                margin: auto;
+                margin-top: 29px;
+                margin-bottom: 29px;
+            }
+
+            .pencil img {
+                margin-top: 15px;
+            }
+
+            .pencil_text {
+                width: 271.66px;
+                height: 213px;
+                flex-wrap: wrap;
+                text-align: start;
+                padding-top: 20px;
+                margin: 20px;
+                text-align: left;
+            }
+
+            .pencil h2 {
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 34px;
+            }
+
+            .pencil p {
+                width: 260.66px;
+                height: 180px;
+                display: block;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+
+            .apartment {
+                width: 371.66px;
+                height: 213px;
+                align-items: flex-start;
+                text-align: left;
+                display: flex;
+                margin: auto;
+                margin-top: 29px;
+                margin-bottom: 29px;
+            }
+
+            .apartment img {
+                margin-top: 15px;
+            }
+
+            .apartment_text {
+                width: 271.66px;
+                height: 213px;
+                flex-wrap: wrap;
+                text-align: start;
+                padding-top: 20px;
+                margin: 20px;
+                text-align: left;
+            }
+
+            .apartment h2 {
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 34px;
+            }
+
+            .apartment p {
+                width: 260.66px;
+                height: 180px;
+                display: block;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+
+            .telebook {
+                width: 371.66px;
+                height: 213px;
+                align-items: flex-start;
+                text-align: left;
+                display: flex;
+                margin: auto;
+                margin-top: 29px;
+                margin-bottom: 29px;
+            }
+
+            .telebook_text {
+                width: 271.66px;
+                height: 213px;
+                flex-wrap: wrap;
+                text-align: start;
+                padding-top: 20px;
+                margin: 20px;
+            }
+
+            .telebook img {
+                margin-top: 15px;
+            }
+
+            .telebook h2 {
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 34px;
+            }
+
+            .telebook p {
+                width: 260.66px;
+                height: 180px;
+                display: block;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+
+            .intro {
+                width: 1295px;
+                height: 501px;
+                padding: 100px 0px 100px 0px;
+            }
+
+            .totalIntro {
+                width: 1265px;
+                height: 501px;
+                display: flex;
+            }
+
+            .leftIntro {
+                width: 632.5px;
+                height: 501px;
+                align-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .rightIntro {
+                width: 632.5px;
+                height: 501px;
+                margin: 0px 0px 0px 0px;
+                padding: 0px 15px 0px 15px;
+            }
+
+            .leftIntro_divider {
+                width: 632.5px;
+                height: 62px;
+            }
+
+            .leftIntro_divider img {
+                margin-top: 29px;
+                margin-bottom: 29px;
+            }
+
+            .leftIntro_text {
+                width: 632.5px;
+                height: 42px;
+                flex-wrap: wrap;
+                text-align: start;
+            }
+
+            .leftIntro_text h2 {
+                height: 92px;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 42px;
+                letter-spacing: 1.8px;
+            }
+
+            .leftIntro_text h3 {
+                width: 632.5px;
+                height: 117px;
+                color: #333333;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 1.08px;
+            }
+
+            .leftIntro_text p {
+                width: 632.5px;
+                height: 170px;
+            }
+
+            .leftIntro_button {
+                width: 632.5px;
+                height: 60px;
+                display: flex;
+                flex-flow: wrap;
+            }
+
+            .leftIntro_button button {
+                width: 163.91px;
+                height: 58px;
+                padding: 22px 37px 22px 37px;
+                background: #2ac5f4;
+                border-color: #2ac5f4;
+
+            }
+
+            .leftIntro_button a {
+                font-family: "Montserrat", Sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                text-transform: uppercase;
+                line-height: 14px;
+                letter-spacing: 0.06px;
+                text-align: left;
+                color: #ffffff;
+            }
+
+            .rightIntro {
+                width: 632.5px;
+                height: 501px;
+            }
+
+            .rightIntro img {
+                width: 602.5px;
+                height: 453.72px;
+            }
+
+            .building_section {
+                width: 1295px;
+                height: 716px;
+                display: block;
+            }
+
+            .row_top {
+                width: 1295px;
+                height: 358px;
+                display: flex;
+            }
+
+            .row_bottom {
+                width: 1295px;
+                height: 358px;
+                display: flex;
+            }
+
+            .commercial_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .commercial_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .commercial_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .cultural_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .cultural_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .cultural_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .data_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .data_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .data_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .educational_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .educational_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .educational_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .government_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .government_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .government_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .healthcare_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .healthcare_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .healthcare_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .manufacturing_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .manufacturing_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .manufacturing_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .warehouse_building {
+                width: 316.25px;
+                height: 358px;
+                display: flex;
+                text-align: center;
+                position: relative;
+            }
+
+            .warehouse_building img {
+                width: 316.25px;
+                height: 358px;
+            }
+
+            .warehouse_building>.text {
+                width: 316.25px;
+                height: 34px;
+                position: absolute;
+                top: 179px;
+            }
+
+            .news {
+                width: 1295px;
+                height: 977.3px;
+                padding-top: 85px;
+                flex-wrap: wrap;
+            }
+
+            .news_wrap {
+                width: 1295px;
+                height: 792.3px;
+            }
+
+            .news_wrap_divider {
+                width: 1295px;
+                height: 62px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .header_wrap {
+                width: 1295px;
+                height: 92px;
+                text-align: center;
+            }
+
+            .header_wrap h2 {
+                width: 1295px;
+                height: 42px;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 42px;
+                letter-spacing: 1.8px;
+            }
+
+            .totalNews {
+                width: 1295px;
+                height: 580.3px;
+                margin-bottom: 0px;
+                display: flex;
+            }
+
+            .hospital_news_wrap {
+                width: 421.66px;
+                height: 520.3px;
+                padding: 0px 0px 50px 0px;
+                outline: none;
+            }
+
+            .hospital_news {
+                width: 421.66px;
+                height: 470.3px;
+                padding: 0px 15px 0px 15px;
+            }
+
+            .hospital_news img {
+                width: 391.66px;
+                height: 261.3px;
+                border: none;
+                margin-bottom: 30px;
+            }
+
+            .hospital_news_text {
+                width: 391.66px;
+                height: 173px;
+            }
+
+            .hospital_news_text a {
+                color: #333333;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 1.0px;
+                text-align: left;
+            }
+
+            .postedBy {
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .postedBy a {
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #398ffc;
+            }
+
+            .time a {
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #398ffc;
+            }
+
+            .hospital_news_text p {
+                width: 391.66px;
+                height: 90px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .warehouse_news_wrap {
+                width: 421.66px;
+                height: 520.3px;
+                padding: 0px 0px 50px 0px;
+                outline: none;
+            }
+
+            .warehouse_news {
+                width: 421.66px;
+                height: 470.3px;
+                padding: 0px 15px 0px 15px;
+            }
+
+            .warehouse_news img {
+                width: 391.66px;
+                height: 261.09px;
+                border: none;
+                margin-bottom: 30px;
+            }
+
+            .warehouse_news_text {
+                width: 391.66px;
+                height: 173px;
+            }
+
+            .warehouse_news_text p {
+                width: 391.66px;
+                height: 90px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .warehouse_news_text a {
+                color: #333333;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 1.0px;
+                text-align: left;
+            }
+
+            .warehouse_news_time a {
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #398ffc;
+            }
+
+            .warehouse_news_postedBy {
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .warehouse_news_postedBy a {
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #398ffc;
+            }
+
+            .hotel_news_wrap {
+                width: 421.66px;
+                height: 520.3px;
+                padding: 0px 0px 50px 0px;
+                outline: none;
+            }
+
+            .hotel_news {
+                width: 421.66px;
+                height: 470.3px;
+                padding: 0px 15px 0px 15px;
+            }
+
+            .hotel_news img {
+                width: 391.66px;
+                height: 261.09px;
+                border: none;
+                margin-bottom: 30px;
+            }
+
+            .hotel_news_text {
+                width: 391.66px;
+                height: 173px;
+            }
+
+            .hotel_news_text p {
+                width: 391.66px;
+                height: 90px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .hotel_news_text a {
+                color: #333333;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 1.0px;
+                text-align: left;
+            }
+
+            .hotel_news_time a {
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #398ffc;
+            }
+
+            .hotel_news_postedBy {
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .hotel_news_postedBy a {
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 34px;
+                letter-spacing: 0px;
+                text-align: left;
+                color: #398ffc;
+            }
+
+            .button_container {
+                width: 1265px;
+                height: 58px;
+                justify-content: center;
+                display: flex;
+                flex-flow: row nowrap;
+            }
+
+            .button_container button {
+                width: 180.5px;
+                height: 58px;
+                padding: 22px 37px 22px 37px;
+                background: #2ac5f4;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #2ac5f4;
+            }
+
+            .button_container a {
+                color: #ffffff;
+                font-size: 14px;
+                font-family: Roboto, sans-serif;
+            }
+
+            .final_section {
+                width: 1295px;
+                height: 581.98px;
+                background-color: #333333;
+                padding: 130px 0px 50px 0px;
+                display: flex;
+            }
+
+            .customer_thanks {
+                width: 316.25px;
+                height: 401.98px;
+                padding: 0px 25px 50px 0px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .customer_thanks_logo {
+                width: 291.25px;
+                height: 75.98px;
+                justify-content: flex-start;
+            }
+
+            .customer_thanks_logo img {
+                width: 213px;
+                height: 57.9px;
+                border: none;
+                box-shadow: none;
+            }
+
+            .customer_thanks_text {
+                width: 291.25px;
+                height: 260px;
+                margin-top: -50px;
+            }
+
+            .customer_thanks_text p {
+                width: 266.25px;
+                height: 260px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+
+            .navigation {
+                width: 316.25px;
+                height: 401.98px;
+                padding: 25px 25px 50px 0px;
+            }
+
+            .navigation_header {
+                width: 291.25px;
+                height: 52px;
+                margin-bottom: 0px;
+            }
+
+            .navigation_header h2 {
+                width: 291.25px;
+                height: 34px;
+                color: #ffffff;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 1.08px;
+                ;
+            }
+
+            .navigation_content {
+                width: 291.25px;
+                height: 186px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .navigation_content a {
+                width: 291.25px;
+                height: 26px;
+                justify-content: flex-start;
+                color: #2ac5f4;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+
+            .recent_comments {
+                width: 316.25px;
+                height: 401.98px;
+                margin: 0px 0px 0px 0px;
+                padding: 25px 25px 50px 0px;
+                display: row;
+            }
+
+            .recent_comments_top_wrap {
+                width: 291.95px;
+                height: 90px;
+                padding: 0px 0px 15px 0px;
+                overflow: hidden;
+            }
+
+            .recent_comments_bottom_wrap {
+                width: 291.95px;
+                height: 64px;
+                padding: 0px 0px 15px 0px;
+                overflow: hidden;
+            }
+
+            .recent_comments_header {
+                width: 291.25px;
+                height: 52px;
+            }
+
+            .recent_comments_header h2 {
+                width: 291.25px;
+                height: 34px;
+                color: #ffffff;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 1.08px;
+            }
+
+            .recent_comments_subtitle {
+                width: 291.25px;
+                height: 52px;
+
+            }
+
+            .recent_comments_subtitle a {
+                width: 269.7px;
+                height: 45px;
+                color: #ffffff;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .recent_comments_postedby_first {
+                width: 91.88px;
+                height: 23px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 23px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .recent_comments_bottom_wrap a {
+                width: 170.29px;
+                color: #2ac5f4;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .recent_comments_postedby_second {
+                width: 91.88px;
+                height: 23px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
+                line-height: 23px;
+                letter-spacing: 0px;
+                text-align: left;
+            }
+
+            .contacts {
+                width: 316.25px;
+                height: 401.98px;
+                padding: 25px 25px 50px 25px;
+            }
+
+            .contacts_header {
+                width: 266.25px;
+                height: 52px;
+            }
+
+            .contacts_header h2 {
+                width: 266.25px;
+                height: 34px;
+                color: #ffffff;
+                font-family: "Montserrat", Sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 1.08px;
+            }
+
+            .companyAddress {
+                width: 266.25px;
+                height: 68px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+
+            .companyPhones {
+                width: 266.25px;
+                height: 62px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+
+            .companyPhones a {
+                color: #2ac5f4;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+
+            .companyEmail {
+                width: 266.25px;
+                height: 34px;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+
+            .companyEmail a {
+                color: #2ac5f4;
+                font-family: "Lato", Sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 0px;
+            }
+            .finalBar{
+                width: 1295px;
+                height: 53px;
+                background-color: #272727;
+                padding: 15px 0px 8px 0px;
+                display: flex;
+            }
+            .finalBar_author{
+                width: 632.5px;
+                height: 24px;
+                text-align: left;
+                color: #888888;
+                font-family: "Lato", Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 24px;
+                letter-spacing: 0px;
+            }
+            .finalBar_author a{
+                width: 40.3px;
+                height: 17px;
+                color: #398ffc;
+                background-color: transparent;
+            }
+            .finalBar_app{
+                width: 632.5px;
+                height: 30px;
+                text-align: right;
+            }
+            .finalBar_app a{
+                width: 15px;
+                height: 15px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="blackTitle">
+            <div class="address">
+                <img src="building/location.png" alt="location">
+                <span class="location_text">Address: 4578 Marmora Road, Glasgow, D04 89GR</span>
+            </div>
+            <div class="telephone">
+                <img src="building/phone.png" alt="phone">
+                <span class="telephone_text">Phones: (800) 123-0045; (800) 123-0046</span>
+            </div>
+            <div class="littlelogo_wrap">
+                <div class="littlelogo">
+                    <a href="#"><img src="building/facebook.png" alt="facebook" class="facebook"></a>
+                    <a href="#"><img src="building/twitter.png" alt="picture" class="twitter"></a>
+                    <a href="#"><img src="building/verter.png" alt="picture" class="verter"></a>
+                    <a href="#"><img src="building/youtube.png" alt="picture" class="youtube"></a>
+                    <a href="#"><img src="building/pinter.png" alt="picture" class="pinter"></a>
+                    <a href="#"><img src="building/ig.png" alt="picture" class="ig"></a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <section class="subtitle">
+            <div class="companyLogo_wrap">
+                <div class="companyLogo">
+                    <a href="#">
+                        <img src="building/logo.png" alt="MANUFAX">
+                    </a>
+                </div>
+            </div>
+            <div class="menu_wrap">
+                <nav class="menu">
+                    <a href="#" style="color: #2ac5f4;">HOME</a>
+                    <a href="#">ABOUT</a>
+                    <a href="#">SERVICES</a>
+                    <a href="#">PROJECTS</a>
+                    <a href="#">BLOG</a>
+                    <a href="#">CONTACTS</a>
+                </nav>
+            </div>
+            <div class="search_wrap">
+                <div class="search">
+                    <a href="#">
+                        <img src="building/search.png" alt="magnify" class="magnify">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="slider">
+            <div class="slider_group_picture">
+                <img src="building/slide-1.png" alt="picture">
+            </div>
+            <div class="slider_content">
+                <div class="title">
+                    <h5 valign="top" ;>CONSTRUCTION</h5>
+                </div>
+                <div class="subtitle">
+                    <h5>SEE HOW A 10-STORIES TOWER'S BEING BUILT, IN A TIME-LAPSE</h5>
+                </div>
+                <div class="slider_content_button">
+                    <button>
+                        <a href="#">SEE OUR RECENT PROJECTS</a>
+                    </button>
+                </div>
+                <div class="arrowLeft">
+                    <a href="#">
+                        <img src="building/left.png" alt="leftarrow">
+                    </a>
+                </div>
+                <div class="arrowRight">
+                    <a href="#">
+                        <img src="building/right.png" alt="rightarrow">
+                    </a>
+                </div>
+                <div class="three_dots">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
+
+        </div>
+        <section class="companyServices">
+            <div class="divider">
+                <img src="building/divider.png" alt="divider">
+            </div>
+            <div class="headingTitle">OUR SERVICES</div>
+            <div class="rowservices_top">
+                <div class="house_wrap">
+                    <div class="house">
+                        <img src="building/house.png" alt="picture">
+                        <div class="house_text">
+                            <h2 class="title">BUILDING INFORMATION MODELING</h2>
+                            <p>Oftentimes physical and functional essence of any construction project needs to be
+                                represented digitally, in a 3D model format. In...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_wrap">
+                    <div class="box">
+                        <img src="building/box.png" alt="picture">
+                        <div class="box_text">
+                            <h2 class="title">CONSTRUCTION SERVICES</h2>
+                            <p>Our customers love the pace/quality tempo that we show during each of the principal
+                                construction processes! We're comfortable with any...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sixdots_wrap">
+                    <div class="sixdots">
+                        <img src="building/sixbox.png" alt="picture">
+                        <div class="sixdots_text">
+                            <h2 class="title">PRE-CONSTRUCTION SERVICES</h2>
+                            <p>We take our time on initial planning before any construction begins, to balance all the
+                                financial and efficiency issues beforehand.This...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rowservices_bottom">
+                <div class="pencil_wrap">
+                    <div class="pencil">
+                        <img src="building/pen.png" alt="picture">
+                        <div class="pencil_text">
+                            <h2 class="title">DESIGN-BUILD</h2>
+                            <p>If a project is not too complex, we may hire a designer-builder type of contractor, to
+                                make the longevity of...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="apartment_wrap">
+                    <div class="apartment">
+                        <img src="building/apartment.png" alt="picture">
+                        <div class="apartment_text">
+                            <h2 class="title">CONSTRUCTION MANAGEMENT</h2>
+                            <p>Construction project management is essential. We're using the most time and iterations
+                                efficient life cycles for that.As you may know,...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="telebook_wrap">
+                    <div class="telebook">
+                        <img src="building/telebook.png" alt="picture">
+                        <div class="telebook_text">
+                            <h2 class="title">GENERAL CONTRACTING</h2>
+                            <p>We have a long list of professional contractors, whom our engineers and architects enjoy
+                                to work with on a majority...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="intro">
+            <div class="totalIntro">
+                <div class="leftIntro">
+                    <div class="leftIntro_divider">
+                        <img src="building/divider.png" alt="divider">
+                    </div>
+                    <div class="leftIntro_text">
+                        <h2>OUR HISTORY</h2>
+                        <h3>OUR CONSTRUCTION COMPANY HAS BEEN FOUNDED 10 YEARS AGO, AT THEVERY PEAK OF THE BUILDING
+                            FRENZY IN THE US…</h3>
+                        <p>Since then we’ve built hundreds of commercial, government and private buildings and
+                            facilities. It may not sound like a lot, but if you estimate the manpower, working hours,
+                            materials, planning and correlating that were all involved in completing each separate
+                            project, then our productivity is immense!</p>
+                        <div class="leftIntro_button">
+                            <button>
+                                <a href="#">READ MORE</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightIntro">
+                    <img src="building/index-2.png" alt="doctor">
+                </div>
+            </div>
+        </section>
+        <section class="building_section">
+            <div class="row_top">
+                <div class="commercial_building">
+                    <img src="building/project-7.png" alt="building">
+                    <div class="text">
+                        <h3>Commercial</h3>
+                    </div>
+                </div>
+                <div class="cultural_building">
+                    <img src="building/project-6.png" alt="building">
+                    <div class="text">
+                        <h3>CULTURAL / LIFESTYLE</h3>
+                    </div>
+                </div>
+                <div class="data_building">
+                    <img src="building/project-5.png" alt="building">
+                    <div class="text">
+                        <h3>Data / TECHNOLOGY</h3>
+                    </div>
+                </div>
+                <div class="educational_building">
+                    <img src="building/project-4.png" alt="building">
+                    <div class="text">
+                        <h3>EDUCATIONAL</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row_bottom">
+                <div class="government_building">
+                    <img src="building/project-2.png" alt="building">
+                    <span class="text">
+                        <h3>GOVERNMENT / MILITARY</h3>
+                    </span>
+                </div>
+                <div class="healthcare_building">
+                    <img src="building/project-3.png" alt="building">
+                    <span class="text">
+                        <h3>HEALTHCARE</h3>
+                    </span>
+                </div>
+                <div class="manufacturing_building">
+                    <img src="building/project-1.png" alt="building">
+                    <span class="text">
+                        <h3>MANUFACTURING / INDUSTRIAL</h3>
+                    </span>
+                </div>
+                <div class="warehouse_building">
+                    <img src="building/project-8.png" alt="building">
+                    <span class="text">
+                        <h3>WAREHOUSE / LOGISTICS</h3>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="news">
+            <div class="news_wrap">
+                <div class="news_wrap_divider">
+                    <img src="building/divider.png" alt="divider">
+                </div>
+                <div class="header_wrap">
+                    <h2>RECENT NEWS</h2>
+                </div>
+                <div class="totalNews">
+                    <div class="hospitotalNal__wrap">
+                        <div class="hospital_news">
+                            <img src="building/blog-27.png" alt="picture">
+                            <div class="hospital_news_text">
+                                <h4><a href="#">FUTURE PROOFING HOSPITALS</a></h4>
+                                <span class="postedBy">
+                                    Posted by
+                                    <a href="#">admin</a>
+                                </span>
+                                <span class="time">
+                                    <time datetime>
+                                        <a href="#">December 7, 2018</a>
+                                    </time>
+                                </span>
+                                <p>By improving the physical layout of hospitals and medical facilities, we can enhance
+                                    and increase safety mechanisms, improve care, and…</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warehouse_news_wrap">
+                        <div class="warehouse_news">
+                            <img src="building/blog-26.png" alt="picture">
+                            <div class="warehouse_news_text">
+                                <h4><a href="#">BIKE PARTS WAREHOUSE, DE</a></h4>
+                                <span class="warehouse_news_postedBy">
+                                    Posted by
+                                    <a href="#">admin</a>
+                                </span>
+                                <span class="warehouse_news_time">
+                                    <time datetime>
+                                        <a href="#">December 7, 2018</a>
+                                    </time>
+                                </span>
+                                <p>Delaware proved to be a very friendly place to work at… While invited there for
+                                    completing a mid-sized warehouse for…</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hotel_news_wrap">
+                        <div class="hotel_news">
+                            <img src="building/blog-28.png" alt="picture">
+                            <div class="hotel_news_text">
+                                <h4><a href="#">JOY HOTEL & CASINO</a></h4>
+                                <span class="hotel_news_postedBy">
+                                    Posted by
+                                    <a href="#">admin</a>
+                                </span>
+                                <span class="hotel_news_time">
+                                    <time datetime>
+                                        <a href="#">December 7, 2018</a>
+                                    </time>
+                                </span>
+                                <p>This hotel & casino complex is our most recent completed building… The whole
+                                    structure that took us 6 months to…</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button_container">
+                <button>
+                    <a href="#">SEE ALL NEWS</a>
+                </button>
+            </div>
+        </section>
+        <section class="final_section">
+            <div class="customer_thanks">
+                <div class="customer_thanks_logo">
+                    <img src="building/logo.png" alt="logo">
+                </div>
+                <div class="customer_thanks_text">
+                    <p>
+                        Construction’s core values have been shaped over more than 10 years of delivering the finest
+                        construction services to our clients. They stood to the test of time and these principles remain
+                        our bedrock lynchpins. We never tried to cut on either quality, the pace of work or any other
+                        construction aspect. We stay true to our full promise of efficiency!
+                    </p>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="navigation_header">
+                    <h2>NAVIGATION</h2>
+                </div>
+                <div class="navigation_content">
+                    <a href="#" style="color: #ffffff;">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contacts</a>
+                </div>
+            </div>
+            <div class="recent_comments">
+                <div class="recent_comments_header">
+                    <h2>RECENT COMMENTS</h2>
+                </div>
+                <div class="recent_comments_top_wrap">
+                    <div class="recent_comments_subtitle">
+                        <h4><a href="#">The art and science of color planning for performance requirements</a></h4>
+                    </div>
+                    <span class="recent_comments_postedby_first">Posted by admin</span>
+                </div>
+                <div class="recent_comments_bottom_wrap">
+                    <h4>
+                        <a href="#">Future proofing hospitals</a>
+                    </h4>
+                    <span class="recent_comments_postedby_second">Posted by admin</span>
+                </div>
+            </div>
+            <div class="contacts">
+                <div class="contacts_header">
+                    <h2>CONTACTS</h2>
+                </div>
+                <div class="companyAddress">Address: 4578 Marmora Road, Glasgow, D04 89GR</div>
+                <div class="companyPhones">
+                    Phones
+                    <a href="#">(800) 123-0045</a>
+                    ;
+                    <a href="#">(800) 123-0046</a>
+                </div>
+                <div class="companyEmail">
+                    Email:
+                    <a href="@">info@demolink.org</a>
+                </div>
+            </div>
+        </section>
+        <section class="finalBar">
+            <div class="finalBar_author">
+                Manufax Theme © 2019. | Theme design by
+                <a href="#">Zemez</a>
+            </div>
+            <div class="finalBar_app">
+                <a href="#"><img src="building/facebook.png" alt="facebook"></a>
+                <a href="#"><img src="building/twitter.png" alt="twitter"></a>
+                <a href="#"><img src="building/verter.png" alt="verter"></a>
+                <a href="#"><img src="building/youtube.png" alt="youtube"></a>
+                <a href="#"><img src="building/pinter.png" alt="pinter"></a>
+                <a href="#"><img src="building/ig.png" alt="ig"></a>
+            </div>
+        </section>
+    </body>
+
+</html>
