@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Healthy Food</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                text-decoration: none;
+                font-family: Lato, sans-serif;
+                box-sizing: border-box;
+                color: #000;
+            }
+
+            .page_container {
+                border-bottom: 1px solid #f0f0f0;
+                padding: 16px 0;
+                display: flex;
+                margin: 0 47.5px;
+                border-bottom: 1px solid #f0f0f0;
+                vertical-align: middle;
+                justify-content: space-between;
+            }
+
+            .account {
+                margin-top: 13px;
+                transition: 2s;
+            }
+
+            .account:hover a {
+                color: #FFE605;
+            }
+
+            .account img {
+                width: 13px;
+                height: 15px;
+            }
+
+            .account a {
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            .pannel_menu {
+                display: flex;
+            }
+
+            .minifunc {
+                margin: 20px 20px 0 0;
+            }
+
+            .minifunc img {
+                width: 19.41px;
+                height: 17px;
+            }
+
+            .decoration_yello_zero {
+                text-align: center;
+                background-color: #FFE605;
+                border-radius: 100%;
+                position: relative;
+                top: -40px;
+                right: -20px;
+            }
+
+            .page_title {
+                padding: 65px 0;
+                position: sticky;
+                top: 0px;
+                z-index: 2335252;
+                background: #fff;
+            }
+
+            .page_title_container {
+                margin: 47.5px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 47.5px;
+            }
+
+            .company_logo {
+                font-size: 18px;
+                margin-top: 5px;
+            }
+
+            .company_logo a,
+            span {
+                font-weight: 400;
+                margin-top: 5px;
+                vertical-align: baseline;
+            }
+
+            .page_title_navigate {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .navigate_text {
+                margin: 20px 20px 0 0;
+                font-weight: bold;
+                transition: 1s;
+            }
+
+            .navigate_text:hover {
+                text-decoration: underline;
+            }
+
+            .slider {
+                display: flex;
+            }
+
+            .slide_img {
+                width: 55%;
+            }
+
+            .slide_img img {
+                width: 100%;
+            }
+
+            .slide_caption {
+                width: 45%;
+                align-items: flex-start;
+                flex-direction: column;
+                text-align: left;
+                padding: 0px 30px 30px 30px;
+            }
+
+            .slide_caption h2 {
+                margin-top: 20px;
+                margin-bottom: 30px;
+                font-size: 80px;
+                line-height: 100px;
+                font-weight: 400;
+            }
+
+            .slide_caption h3 {
+                width: 75%;
+                line-height: 75px;
+                font-size: 55px;
+                color: #FFE605;
+            }
+
+            .slider_button {
+                margin-top: 55px;
+                font-size: 20px;
+                font-weight: bold;
+                padding: 15px 38px;
+                border-radius: 5px;
+                background-color: #000;
+                border: 1px solid #000;
+            }
+
+            .slider_button:hover {
+                color: #000;
+                background-color: #FFE605;
+            }
+
+            .slider_button a {
+                color: #ffffff;
+            }
+
+            .slide_border {
+                height: 70px;
+                margin-left: 9%;
+                box-shadow: -13px 15px 33px -18px rgba(0, 0, 0, 0.1);
+                background-color: #ffffff;
+                margin-bottom: 50px;
+            }
+
+            .food_logo_list {
+                padding: 30px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .food_logo_icon {
+                width: 16.2714097%;
+                padding: 15px;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                transition: 1s;
+            }
+
+            .food_logo_icon:hover {
+                box-shadow: 33px 15px 33px -18px rgba(87, 83, 83, 0.1);
+            }
+
+            .food_logo_icon img {
+                width: 100%;
+                margin-bottom: -70px;
+            }
+
+            .food_logo_icon span {
+                width: 100%;
+                font-weight: bolder;
+                font-size: 24px;
+            }
+
+            .section_shop_now {
+                padding: 45px 0;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 30px;
+            }
+
+            .selection_banner_product {
+                width: 50%;
+                padding: 0 7.5px;
+            }
+
+            .purple_brocalli {
+                width: 50%;
+                height: 100%;
+                position: relative;
+            }
+
+            .purple_brocalli_text {
+                position: absolute;
+                top: 560px;
+                left: 50px;
+                white-space: nowrap;
+            }
+
+            .purple_brocalli_text h3 {
+                color: #ffffff;
+                font-size: 36px;
+                font-weight: bolder;
+            }
+
+            .purple_brocalli_text::after {
+                content: 'Shop Now';
+                text-decoration: underline;
+                color: #ffffff;
+                font-weight: bolder;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .selection_banner_price {
+                width: 50%;
+                height: 100%;
+                padding: 0 7.5px;
+            }
+
+            .hot_deals {
+                width: 50%;
+                height: 100%;
+                margin-bottom: 20px;
+                position: relative;
+            }
+
+            .orange {
+                width: 50%;
+                height: 100%;
+                margin-top: 20px;
+                position: relative;
+            }
+
+            .hot_deals_text {
+                font-size: 36px;
+                font-weight: bold;
+                position: absolute;
+                top: 100px;
+                left: 20px;
+            }
+
+            .hot_deals_text h3,
+            .hot_deals_text p {
+                color: #ffffff;
+                white-space: nowrap;
+            }
+
+            .hot_deals_text::after {
+                content: 'Shop Now';
+                text-decoration: underline;
+                color: #ffffff;
+                font-weight: bolder;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .orange_text {
+                position: absolute;
+                top: 100px;
+                left: 30px;
+            }
+
+            .orange_text h3,
+            .orange_text p {
+                color: #ffffff;
+                white-space: nowrap;
+            }
+
+            .orange_text h3 {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+
+            .orange_text p {
+                font-size: 15px;
+            }
+
+            .orange_text::after {
+                content: 'Shop Now';
+                text-decoration: underline;
+                color: #ffffff;
+                font-weight: bolder;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .featured_product_section {
+                width: 100%;
+                padding-top: 35px;
+                padding-bottom: 50px;
+                margin-bottom: 44px;
+                margin-top: 78px;
+            }
+
+            .featured_product_heading {
+                padding: 13px 0 12px 0;
+                text-align: center;
+                font-size: 24px;
+                font-weight: 800;
+            }
+
+            .swiper_button {
+                position: relative;
+                left: 1150px;
+            }
+
+            .product {
+                margin-left: 40px;
+            }
+
+            .product_text {
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            .product_text .span1 {
+                text-decoration: line-through;
+                margin-right: 5px;
+                color: black;
+                font-size: 21px;
+                font-weight: 700;
+            }
+
+            .product_text p {
+                color: black;
+                font-size: 21px;
+            }
+
+            .product_text .p2 {
+                color: black;
+                font-size: 21px;
+            }
+
+            .favorite_icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid black;
+                line-height: 40px;
+                display: flex;
+                justify-content: center;
+                transition: 1s;
+            }
+
+            .favorite_icon img {
+                width: 16px;
+                height: 16px;
+                margin: auto;
+            }
+
+            .eyes_icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid black;
+                margin: 0 10px;
+                line-height: 40px;
+                display: flex;
+                justify-content: center;
+                transition: 1s;
+            }
+
+            .eyes_icon img {
+                width: 16px;
+                height: 16px;
+                margin: auto;
+            }
+
+            .button_group {
+                display: flex;
+                padding: 18px 0 0 0;
+            }
+
+            .cart {
+                display: flex;
+                border-radius: 5px;
+                border: 1px solid black;
+                height: 40px;
+                width: 135px;
+                line-height: 40px;
+                text-align: center;
+                transition: 1s;
+            }
+
+            .cart p {
+                color: #000;
+                font-size: 12px;
+                font-weight: bolder;
+                margin: auto;
+            }
+
+            .cart a {
+                display: flex;
+            }
+
+            .cart_img {
+                margin: auto 10px auto 10px;
+                display: flex;
+                justify-self: center;
+                text-align: center;
+            }
+            a:hover{
+                color: #FFE605;
+            }
+            .cart img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .cart:hover,
+            .eyes_icon:hover,
+            .favorite_icon:hover {
+                background-color: #FFE605;
+            }
+
+            .shopify_section {
+                width: 100%;
+                height: 600px;
+                position: relative;
+            }
+
+            .shopify_section_blueberry {
+                width: 100%;
+                position: absolute;
+                top: 100px;
+                right: -300px;
+            }
+
+            .white_background {
+                width: 600px;
+                height: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                position: absolute;
+                left: 70px;
+            }
+
+            .blueberry_discount {
+                display: inline-block;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 80px;
+                text-align: center;
+            }
+
+            .shopify_section__btn {
+                margin: 35px 0 0 0;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 0;
+                border: 1px solid #ffe605;
+                background: #ffe605;
+                color: #000;
+                border-radius: 5px;
+                height: 40px;
+                width: 135px;
+                line-height: 40px;
+                text-align: center;
+            }
+
+            .Pumpkin_on_sale {
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                margin-top: 50px;
+            }
+
+            .Pumpkin_on_sale_other_header {
+                margin-bottom: 50px;
+                text-align: center;
+                font-size: 18px;
+                padding: 10px 30px;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .pumpkin_pic {
+                padding: 10px 22px 52px;
+            }
+
+            .Pumpkin_on_sale_other_product {
+                padding: 0px 0px 10px;
+            }
+
+            .Pumpkin_on_sale_other_product span {
+                font-weight: bolder;
+            }
+
+            #top {
+                display: flex;
+                margin-bottom: 95px;
+            }
+
+            #bottom {
+                display: flex;
+            }
+
+            .feature_posts_section {
+                width: 100%;
+                max-width: 1295px;
+                height: 570px;
+                margin: 80px auto;
+            }
+
+            .feature_posts_header {
+                display: flex;
+                height: 80px;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                font-weight: 900;
+            }
+
+            .feature_posts_article {
+                height: 520px;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .feature_posts_post {
+                width: 370px;
+                margin-left: 12px;
+            }
+
+            .feature_posts_img {
+                display: flex;
+                justify-content: center;
+            }
+
+            .feature_posts_text {
+                margin: 5px;
+                margin-left: 10px;
+            }
+            .feature_posts_text a:hover{
+                color: #FFE605;
+            }
+            .feature_posts_text div {
+                margin-top: 10px;
+            }
+
+            .date_of_post {
+                display: flex;
+            }
+
+            .month {
+                padding-left: 8px;
+            }
+
+            .content {
+                font-size: 14px;
+                padding: 5px 0;
+                font-weight: lighter;
+                line-height: 22px;
+            }
+
+            .feaure_posts_list {
+                display: flex;
+            }
+
+            .end_section {
+                width: 100%;
+                background-color: #f0f0f0;
+            }
+
+            .end_section_wrap {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding-right: 15px;
+                padding-left: 15px;
+                display: flex;
+                padding-bottom: 10px;
+                background-color: #f0f0f0;
+            }
+
+            .end_section_wrap h3 {
+                padding-top: 20px;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            .end_section_wrap a {
+                font-size: 14px;
+            }
+
+            .end_section_wrap ul {
+                padding: 13px 0 0 0;
+            }
+
+            .end_section_wrap li {
+                padding-top: 9px;
+            }
+
+            .end_our_shop_title li {
+                font-size: 14px;
+            }
+
+            .end_news_letter input[type=text] {
+                width: 100%;
+                padding: 12px 5px;
+                margin: 4px 0;
+            }
+
+            .community_logo {
+                height: 100%;
+                margin: 50px 0;
+                margin-left: 50px;
+                align-items: baseline;
+            }
+
+            .end_footer {
+                display: flex;
+                justify-content: center;
+                background-color: #FFE605;
+                height: 100%;
+                position: relative;
+                top: 0;
+                height: 100;
+            }
+
+            .end_footer div {
+                text-align: center;
+                padding: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="page_heading">
+            <div class="page_container">
+                <div class="account">
+                    <a href="#"><img src="KARDONE assets/account.png" alt="account"></a>
+                    <a href="#">My Account</a>
+                </div>
+                <div class="pannel_menu">
+                    <div class="minifunc">
+                        <a href="#"><img src="KARDONE assets/Search.png" alt="Search"></a>
+                    </div>
+                    <div class="minifunc">
+                        <a href="#"><img src="KARDONE assets/favorite.png" alt="favorite"></a>
+                    </div>
+                    <div class="minifunc">
+                        <a href="#"><img src="KARDONE assets/cart.png" alt="cart"></a>
+                        <p class="decoration_yello_zero">0</p>
+                    </div>
+                    <div class="minifunc dollor">
+                        <a href="#"><b>USD</b></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page_title">
+            <div class="page_title_container">
+                <div class="company_logo">
+                    <h1 style="font-size: 36px;"><a href="#">KARDONE</a></h1>
+                    <span><a href="#">HEALTHY FOOD</a></span>
+                </div>
+                <nav class="page_title_navigate">
+                    <li class="navigate_text"><a href="#">HOME</a></li>
+                    <li class="navigate_text"><a href="#">ABOUT US</a></li>
+                    <li class="navigate_text"><a href="#">COLLECTIONS</a></li>
+                    <li class="navigate_text"><a href="#">BLOG</a></li>
+                    <li class="navigate_text"><a href="#">SALE</a></li>
+                    <li class="navigate_text"><a href="#">CONTACT US</a></li>
+                </nav>
+            </div>
+        </section>
+        <section class="slider">
+            <div class="slide_img">
+                <img src="KARDONE assets/asset 14.png" alt="pic">
+            </div>
+            <div class="slide_caption">
+                <h2>
+                    Fresh and Delicious
+                </h2>
+                <h3>
+                    ALL YEAR ROUND!
+                </h3>
+                <button class="slider_button"> <a href="#">READ MORE</a></button>
+            </div>
+        </section>
+        <div class="slide_border"></div>
+        <section class="food_logo_list">
+            <div class=food_logo_icon>
+                <a href="#">
+                    <img src="KARDONE assets/asset 50.png" alt="pic">
+                    <span>Fresh Fruits</span>
+                </a>
+            </div>
+            <div class=food_logo_icon>
+                <a href="#">
+                    <img src="KARDONE assets/asset 51.png" alt="pic">
+                    <span>Veggies</span>
+                </a>
+            </div>
+            <div class=food_logo_icon>
+                <a href="#">
+                    <img src="KARDONE assets/asset 52.png" alt="pic">
+                    <span>Fish</span>
+                </a>
+            </div>
+            <div class=food_logo_icon>
+                <a href="#">
+                    <img src="KARDONE assets/asset 53.png" alt="pic">
+                    <span>Nuts & Seeds</span>
+                </a>
+            </div>
+            <div class=food_logo_icon>
+                <a href="#">
+                    <img src="KARDONE assets/asset 54.png" alt="pic">
+                    <span>Bread</span>
+                </a>
+            </div>
+            <div class=food_logo_icon>
+                <a href="#">
+                    <img src="KARDONE assets/asset 55.png" alt="pic">
+                    <span>Dairy</span>
+                </a>
+            </div>
+        </section>
+        <section class="section_shop_now">
+            <div class="selection_banner_product">
+                <div class="purple_brocalli">
+                    <img src="KARDONE assets/asset 56.png" alt="pic">
+                    <div class="purple_brocalli_text">
+                        <h3>Best Quality Products</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="selection_banner_price">
+                <div class="hot_deals">
+                    <img src="KARDONE assets/asset 57.png" alt="pic">
+                    <div class="hot_deals_text">
+                        <h3>Hot Deals:</h3>
+                        <p>CRAZY PRICE $2.99</p>
+                    </div>
+                    <div class="orange">
+                        <img src="KARDONE assets/asset 58.png" alt="pic">
+                        <div class="orange_text">
+                            <h3>HURRY UP!</h3>
+                            <p>Don't miss your chance to be the first!</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="shopify_section">
+            <div class="shopify_section_blueberry">
+                <img src="KARDONE assets/asset 40.png" alt="berry">
+            </div>
+            <div class="white_background">
+                <div class="blueberry_discount">
+                    <h3>20% off</h3>
+                    <h4>fresh berries</h4>
+                    <button class="shopify_section__btn"><a href="#">Shop now</a></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="Pumpkin_on_sale">
+            <div class="pumpkin_pic">
+                <img src="KARDONE assets/asset 59.png" alt="pumpkin_pic">
+            </div>
+            <div class="Pumpkin_on_sale_other">
+                <div class="Pumpkin_on_sale_other_header">
+                    <h2>On Sale</h2>
+                </div>
+                <div class="Pumpkin_on_sale_other_product">
+                    <div class="Pumpkin_on_sale_other_product" id="top">
+                        <div class="product">
+                            <img src="KARDONE assets/asset 41.png" alt="pic">
+                            <div class="product_text">
+                                <h4><a href="#">Justin's Nut Butter ...</a></h4>
+                                <p><span>$29.00 - $36.00</span></p>
+                            </div>
+                            <div class="button_group">
+                                <button class="cart">
+                                    <a href="#">
+                                        <div class="cart_img">
+                                            <img src="KARDONE assets/cart.png" alt="">
+                                        </div>
+                                        <p>Add to cart</p>
+                                    </a>
+                                </button>
+                                <a href="#" class="eyes_icon"><img src="KARDONE assets/eyesicon.png" alt="pic"></a>
+                                <a href="#" class="favorite_icon"><img src="KARDONE assets/favorite.png" alt="pic"></a>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="KARDONE assets/asset 43.png" alt="pic">
+                            <div class="product_text">
+                                <h4><a href="#">Nabisco Mini Nilla W...</a></h4>
+                                <p><span>$30.00</span></p>
+                            </div>
+                            <div class="button_group">
+                                <button class="cart">
+                                    <a href="#">
+                                        <div class="cart_img">
+                                            <img src="KARDONE assets/cart.png" alt="">
+                                        </div>
+                                        <p>Choose Variant</p>
+                                    </a>
+                                </button>
+                                <a href="#" class="eyes_icon"><img src="KARDONE assets/eyesicon.png" alt="pic"></a>
+                                <a href="#" class="favorite_icon"><img src="KARDONE assets/favorite.png" alt="pic"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Pumpkin_on_sale_other_product" id="bottom">
+                        <div class="product">
+                            <img src="KARDONE assets/asset 45.png" alt="pic">
+                            <div class="product_text">
+                                <h4><a href="#">Justin's Nut Butter ...</a></h4>
+                                <p><span>$12.00 - $30.00</span></p>
+                            </div>
+                            <div class="button_group">
+                                <button class="cart">
+                                    <a href="#">
+                                        <div class="cart_img">
+                                            <img src="KARDONE assets/cart.png" alt="">
+                                        </div>
+                                        <p>Add to cart</p>
+                                    </a>
+                                </button>
+                                <a href="#" class="eyes_icon"><img src="KARDONE assets/eyesicon.png" alt="pic"></a>
+                                <a href="#" class="favorite_icon"><img src="KARDONE assets/favorite.png" alt="pic"></a>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="KARDONE assets/asset 47.png" alt="pic">
+                            <div class="product_text">
+                                <h4><a href="#">Justin's Nut Butter ...</a></h4>
+                                <p><span>$23.00</span></p>
+                            </div>
+                            <div class="button_group">
+                                <button class="cart">
+                                    <a href="#">
+                                        <div class="cart_img">
+                                            <img src="KARDONE assets/cart.png" alt="">
+                                        </div>
+                                        <p>Choose Variant</p>
+                                    </a>
+                                </button>
+                                <a href="#" class="eyes_icon"><img src="KARDONE assets/eyesicon.png" alt="pic"></a>
+                                <a href="#" class="favorite_icon"><img src="KARDONE assets/favorite.png" alt="pic"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="feature_posts_section">
+            <div class="feature_posts_header">
+                <b>Featured Posts</b>
+            </div>
+            <div class="feature_posts_article">
+                <ul class="feaure_posts_list">
+                    <li>
+                        <div class="feature_posts_post">
+                            <div class="feature_posts_img">
+                                <img src="KARDONE assets/asset 60.png" alt="pic">
+                            </div>
+                            <div class="feature_posts_text">
+                                <div class="date_of_post">
+                                    <p>29</p>
+                                    <p class="month">January</p>
+                                </div>
+                                <div>
+                                    <a href="#">
+                                        12 Heavenly Fruits and Honey
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <p>Caffeine and sugar may give you an energy spike, but the crash that follows
+                                        will leave you feeling even more tired than before. However, great...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature_posts_post">
+                            <div class="feature_posts_img">
+                                <img src="KARDONE assets/asset 61.png" alt="pic">
+                            </div>
+                            <div class="feature_posts_text">
+                                <div class="date_of_post">
+                                    <p>29</p>
+                                    <p class="month">January</p>
+                                </div>
+                                <div>
+                                    <a href="#">The Great Start of Your Weight</a>
+                                </div>
+                                <div class="content">
+                                    <p>Kids need energy for sports and play, so it’s important that they’re
+                                        consuming a nutrient-dense snack about an hour before their activity that
+                                        contains carbohydrates....</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature_posts_post">
+                            <div class="feature_posts_img">
+                                <img src="KARDONE assets/asset 62.png" alt="pic">
+                            </div>
+                            <div class="feature_posts_text">
+                                <div class="date_of_post">
+                                    <p>29</p>
+                                    <p class="month">January</p>
+                                </div>
+                                <div>
+                                    <a href="#">The Products that Help You Boost the Energy</a>
+                                </div>
+                                <div class="content">
+                                    <p>Hello, my dears! My name is mary and here, in my blog, I want to share with
+                                        you my findings and useful thoughts about making...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="end_section">
+            <div class="end_section_wrap">
+                <div class="end_information">
+                    <div class="end_information_title">
+                        <h3>Information</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="end_my_account">
+                    <h3>My Account</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Addresses</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="end_our_shop_title">
+                    <h3>Our Shop</h3>
+                    <ul>
+                        <li>Address</li>
+                        <li>4578 Marmora St, San Francisco D04 89GR</li>
+                        <li>Phone</li>
+                        <li><a href="#">1-800-1234-567</a></li>
+                    </ul>
+                </div>
+                <div class="end_news_letter">
+                    <h3>Newsletter</h3>
+                    <ul>
+                        <li>Join our mail list</li>
+                        <li><input type="address" value="Enter your email" style="color: gray;"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="community_logo">
+                <a href="#"><img src="KARDONE assets/fb.png" alt="facebook"></a>
+                <a href=""><img src="KARDONE assets/twit.png" alt="twitter"></a>
+                <a href=""><img src="KARDONE assets/instagram.png" alt="Instagram"></a>
+                <a href=""><img src="KARDONE assets/yt.png" alt="Youtube"></a>
+            </div>
+            <footer class="end_footer">
+                <div>
+                    <p>©Healtly Food . <a href="$">Powered by Shopify</a></p>
+                </div>
+            </footer>
+        </section>
+
+    </body>
+
+</html>
