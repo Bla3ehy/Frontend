@@ -122,7 +122,7 @@ span {
 }
 
 .social_app {
-    margin-left: 30%;
+    // margin-left: 10%;
     display: flex;
     justify-content: flex-end;
     margin-top: 0%;
@@ -660,6 +660,7 @@ span {
         font-size: 15px;
         font-style: italic;
         border: none;
+        margin-right: 2%;
     }
 
     .Sub_btn {
@@ -669,6 +670,14 @@ span {
         font-weight: 700;
         font-size: 15px;
         font-family: 'Lato', sans-serif;
+    }
+    .social_list {
+        display: flex;
+        justify-content: center;
+        
+    }
+    .social_list a{
+        margin-left:20px;
     }
 }
 
