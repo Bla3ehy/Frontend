@@ -151,7 +151,6 @@ span {
 
 .billboard {
   width: 100%;
-  height: auto;
   position: relative;
 }
 
@@ -753,6 +752,15 @@ span {
   margin: 19px;
 }
 
+.page_section ul {
+  padding: 0;
+}
+
+.page_section a {
+  font-size: 14px;
+  font-family: 'Lato, sans-serif';
+}
+
 @media screen and (max-width: 768px) {
   .container {
     border-bottom: 2px solid #f0f0f0;
@@ -1011,10 +1019,10 @@ span {
     font-size: 20px;
     margin: 15px 0;
   }
-  .page_section ul {
+  .page_footer ul {
     padding: 0;
   }
-  .page_section a {
+  .page_footer a {
     font-size: 14px;
     font-family: 'Lato, sans-serif';
   }

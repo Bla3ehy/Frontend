@@ -144,7 +144,7 @@ span {
 
 .billboard {
     width: 100%;
-    height: auto;
+    // height: auto;
     position: relative;
 
     img {
@@ -688,7 +688,6 @@ span {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     position: relative;
-    // font-size: 20px;
 
     a {
         color: #ffffff;
@@ -713,6 +712,16 @@ span {
 
 .page_footer_copyright p {
     margin: 19px;
+}
+.page_section {
+    ul {
+        padding: 0;
+    }
+
+    a {
+        font-size: 14px;
+        font-family: 'Lato, sans-serif';
+    }
 }
 
 
@@ -1040,7 +1049,7 @@ span {
         }
     }
 
-    .page_section {
+    .page_footer {
         ul {
             padding: 0;
         }
