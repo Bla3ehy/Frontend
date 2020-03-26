@@ -82,7 +82,13 @@ span {
 }
 
 .social_app {
-    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    i {
+        margin-left: 20px;
+    }
 }
 
 .breadcrumb {
@@ -111,18 +117,6 @@ span {
 }
 
 
-
-.social_app {
-    // margin-left: 10%;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 0%;
-
-    i {
-        margin-left: 20px;
-    }
-}
-
 .arrow_down_nav_bar {
 
     nav {
@@ -145,9 +139,11 @@ span {
 .billboard {
     width: 100%;
     position: relative;
-    .billboard_pic{
+
+    .billboard_pic {
         width: 100%;
     }
+
     img {
         width: 100%;
     }
@@ -296,36 +292,38 @@ span {
 }
 
 .our_categories_section {
+
     .container {
         margin-top: 33px;
         margin-bottom: 54px;
+    }
 
-        .card {
-            height: 100%;
-        }
+    .card {
+        height: 100%;
+    }
 
-        .card-body {
-            text-align: center;
-            padding: 20px 20px 20px;
-            position: relative;
-        }
+    .card-body {
+        text-align: center;
+        padding: 20px 20px 20px;
+        position: relative;
+    }
 
-        .card_btn {
-            font-size: 15px;
-            background-color: #ffffff;
-            border: 3px solid black;
-            color: #000;
-            padding: 7px 19px;
-            margin: 30px 0;
-        }
+    .card_btn {
+        font-size: 15px;
+        background-color: #ffffff;
+        border: 3px solid black;
+        color: #000;
+        padding: 7px 19px;
+        margin: 30px 0;
+    }
 
-        h5 {
-            font-size: 17.2222222px;
-            font-weight: bold;
-            margin: 15px 0;
-        }
+    h5 {
+        font-size: 17.2222222px;
+        font-weight: bold;
+        margin: 15px 0;
     }
 }
+
 
 
 
@@ -341,6 +339,7 @@ span {
 }
 
 .products_on_sale_section {
+
     .card {
         height: 100%;
         padding: 0 50px;
@@ -358,7 +357,7 @@ span {
         color: #ffffff;
     }
 
-    .discount_lable {
+    .discount_label {
         background-color: #7dd0dc;
         padding: 6px 11px;
         font-size: 12px;
@@ -433,11 +432,8 @@ span {
 
     .blog_col {
         margin-top: 33px;
-        // margin: 33px 10px 0 auto; 
         padding-right: 30px;
         padding-left: 30px;
-        // margin-left: -30px;
-        // margin-right: -30px;
     }
 
     .card {
@@ -496,7 +492,6 @@ span {
     .card_body_button {
         display: flex;
         justify-content: center;
-
     }
 
     .card_btn {
@@ -606,6 +601,7 @@ span {
 }
 
 .follow_instagram_section {
+
     .follow_instagram {
         display: flex;
         justify-content: center;
@@ -624,7 +620,6 @@ span {
 
 .news_letter_section {
     padding: 80px 0 102px;
-    ;
     background-color: #e7f5f7;
     height: 30%;
 
@@ -673,381 +668,48 @@ span {
     .social_list {
         display: flex;
         justify-content: center;
-
+        padding-right: 80px;
     }
-
     .social_list a {
         margin-left: 20px;
     }
 }
 
-.page_footer {
-    padding: 78px 0 0;
-    background-color: #181a1f;
-    color: #d3d3d3;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    position: relative;
 
-    a {
-        color: #ffffff;
-        font-size: 20px;
-        font-family: Lato, sans-serif;
-    }
-
-    .container {
-        padding-bottom: 125px;
-    }
-
-    .page_footer_p {
-        font-size: 20px;
-        margin: 15px 0;
-    }
-}
-
-.page_footer_copyright {
-    position: absolute;
-    bottom: 0px;
-}
-
-.page_footer_copyright p {
-    margin: 19px;
-}
-.page_section {
-    ul {
-        padding: 0;
-    }
-
-    a {
-        font-size: 14px;
-        font-family: 'Lato, sans-serif';
-    }
-}
-
-
-
-
-
-
-
-
-// 以下手機版
-@media screen and (max-width: 768px) {
-
-    .container {
-        border-bottom: 2px solid#f0f0f0;
-        margin: auto;
-    }
-
-    .search_button {
-        margin-right: 0px;
-    }
-
-    .search {
-        margin-top: 5px;
-        // margin-left: 50px;
-    }
-
-    .cart {
-        margin-top: 5px;
-        margin-left: 60px;
-    }
-
-    .logo {
-        margin-left: 23%;
-    }
-
-    .breadcrumb_container {
-        background-color: #ffff;
-        margin-left: 10%;
-        display: none;
-
-        a {
-            display: none;
-        }
-
-        li {
-            display: none;
-        }
-    }
-
-    .social_app {
-        margin-right: 18%;
-        padding: 0 15%
-    }
-
-    .arrow_down_nav_bar {
-        nav {
-            display: flex;
-        }
-
-        ul {
-            display: block;
-        }
-
-        li {
-            display: block;
-        }
-
-        a {
-            display: block;
-        }
-    }
-
-
-    .billboard {
-        width: 100%;
-        display: flex;
-        position: relative;
-        background-size: cover;
-
-        img {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        h3 {
-            margin: 15px 0;
-            font-size: 18px;
-            position: absolute;
-            top: 0px;
-            font-weight: lighter;
-            max-width: none;
-        }
-
-        h3::before {
-            display: none;
-        }
-
-        p {
-            display: none;
-        }
-
-        button {
-            width: 15%;
-            height: 20%;
-            padding: 0px;
-            font-size: 10px;
-        }
-    }
-
-    .new_arrivals {
-        flex-direction: column;
-
-        .new_arrivals_square {
-            margin: 10% 0;
-        }
-
-        .free_shipping_square {
-            margin: 10% 0;
-        }
-
-        .link {
-            width: 100%;
-            border-top: 1px solid #d4bcb5;
-            border-bottom: 1px solid #d4bcb5;
-            text-align: center;
-            padding: 5% 0;
-        }
-    }
-
-    .hair_extensions {
-        margin-top: -10%;
+    .page_footer {
+        padding: 78px 0 0;
+        background-color: #181a1f;
+        color: #d3d3d3;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
         position: relative;
 
-        .hair_extensions_img {
-            padding: 0;
-            margin-bottom: 2%;
+        a {
+            color: #ffffff;
+            font-size: 20px;
+            font-family: Lato, sans-serif;
         }
 
-        .hair_extensions_text {
-            text-align: center;
-            font-size: 50px;
-            right: 20%;
-            top: 20%;
-            margin: auto;
+        .container {
+            padding-bottom: 125px;
         }
 
-        img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover;
-        }
-
-        h3 {
-            font-size: 60px;
-            margin-bottom: 20%;
-        }
-
-        h4 {
-            font-size: 40px;
-            margin-bottom: 15%;
-        }
-
-        h5 {
-            font-size: 60px;
-            font-size: 2%;
-        }
-
-        button {
-            right: 34%;
-            margin-top: -1%;
-            top: 78%;
-        }
-    }
-
-    .our_categories_title {
-
-        span {
-            font-size: 100%;
-        }
-    }
-
-    .our_categories_section {
-        width: 100%;
-
-        .our_categories_col {
-            margin: 0 auto 40px;
-        }
-
-        .card {
-            width: 25rem;
-            margin: auto;
-        }
-
-        .card-body {
-            text-align: center;
-        }
-
-        .card_btn {
-            font-size: 15px;
-            background-color: #ffffff;
-            border: 3px solid black;
-            color: #000;
-        }
-
-        h5 {
-            font-size: 24px;
-            font-weight: bold;
-        }
-    }
-
-    .products_on_sale_title {
-        margin: 30px 0;
-
-        span {
-            font-size: 26px;
-        }
-    }
-
-
-    .products_on_sale_section {
-
-        .products_on_sale_col {
-            padding: 0 30px;
-        }
-
-        .card {
-            height: 100%;
-            margin: 0 auto 40px;
-            display: flex;
-        }
-
-        .card_body_img {
-            margin: 0 50px;
-            // padding: 0 17px;
-        }
-
-        .card_body_title {
-            padding: 0 17px;
-            width: 100%;
-        }
-
-        .card img {
-            width: 100%;
-        }
-
-        .card-title {
-            font-weight: 200;
-            font-size: 16px;
-            color: #181a1f;
-        }
-
-        .new_label,
-        .discount_lable {
-            display: none;
-        }
-
-        .card-body {
-            text-align: center;
-            flex: 1 1 auto;
-            min-height: 1px;
-            padding: 1.25rem;
-        }
-
-        .product_price {
-            margin: 10px 0 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background-color: #ffffff;
-            color: #000;
-            border: 3px solid #000;
-            display: inline-block;
-            vertical-align: top;
-            margin: 0 2px 0 0;
-            padding: 7px 19px;
-            font-size: 15px;
-            font-family: 'Lato', sans-serif;
-        }
-
-        .cart_text {
-            margin-left: 6px;
-        }
-
-        .product_func_heart_eye {
-            padding: 10px;
-        }
-
-        .social_list {
-            display: flex;
-            justify-content: center;
-        }
-    }
-
-    .blog_title span {
-        font-size: 20px;
-    }
-
-    .featured_products_title span {
-        font-size: 20px;
-    }
-
-    .featured_products_section {
-
-        .card {
-            height: 100%;
-            margin: 0 auto 40px;
-            display: flex;
-        }
-    }
-
-    .follow_instagram span {
-
-        font-size: 20px;
-    }
-
-    .news_letter_section {
-
-        h3 {
+        .page_footer_p {
             font-size: 20px;
             margin: 15px 0;
         }
     }
 
-    .page_footer {
+    .page_footer_copyright {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .page_footer_copyright p {
+        margin: 19px;
+    }
+
+    .page_section {
         ul {
             padding: 0;
         }
@@ -1057,4 +719,324 @@ span {
             font-family: 'Lato, sans-serif';
         }
     }
+
+
+
+
+
+
+
+
+    // 以下手機版
+    @media screen and (max-width: 768px) {
+
+        .container {
+            border-bottom: 2px solid#f0f0f0;
+            margin: auto;
+        }
+
+        .search_button {
+            margin-right: 0px;
+        }
+
+        .search {
+            margin-top: 5px;
+        }
+
+        .cart {
+            margin-top: 5px;
+            margin-left: 60px;
+        }
+
+        .logo {
+            margin-left: 23%;
+        }
+
+        .breadcrumb_container {
+            background-color: #ffff;
+            margin-left: 10%;
+            display: none;
+
+            a {
+                display: none;
+            }
+
+            li {
+                display: none;
+            }
+        }
+
+        .social_app {
+            margin-right: 13%;
+            padding: 0 15%
+        }
+
+        .arrow_down_nav_bar {
+            nav {
+                display: flex;
+            }
+
+            ul {
+                display: block;
+            }
+
+            li {
+                display: block;
+            }
+
+            a {
+                display: block;
+            }
+        }
+
+
+        .billboard {
+            width: 100%;
+            display: flex;
+            position: relative;
+            background-size: cover;
+
+            img {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            h3 {
+                margin: 15px 0;
+                font-size: 18px;
+                position: absolute;
+                top: 0px;
+                font-weight: lighter;
+                max-width: none;
+            }
+
+            h3::before {
+                display: none;
+            }
+
+            p {
+                display: none;
+            }
+
+            button {
+                width: 15%;
+                height: 20%;
+                padding: 0px;
+                font-size: 10px;
+            }
+        }
+
+        .new_arrivals {
+            flex-direction: column;
+
+            .new_arrivals_square {
+                margin: 10% 0;
+            }
+
+            .free_shipping_square {
+                margin: 10% 0;
+            }
+
+            .link {
+                width: 100%;
+                border-top: 1px solid #d4bcb5;
+                border-bottom: 1px solid #d4bcb5;
+                text-align: center;
+                padding: 5% 0;
+            }
+        }
+
+        .hair_extensions {
+            margin-top: -10%;
+            position: relative;
+
+            .hair_extensions_img {
+                padding: 0;
+                margin-bottom: 2%;
+            }
+
+            .hair_extensions_text {
+                text-align: center;
+                font-size: 50px;
+                right: 20%;
+                top: 20%;
+                margin: auto;
+            }
+
+            img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover;
+            }
+
+            h3 {
+                font-size: 60px;
+                margin-bottom: 20%;
+            }
+
+            h4 {
+                font-size: 40px;
+                margin-bottom: 15%;
+            }
+
+            h5 {
+                font-size: 60px;
+                font-size: 2%;
+            }
+
+            button {
+                right: 34%;
+                margin-top: -1%;
+                top: 78%;
+            }
+        }
+
+        .our_categories_title {
+
+            span {
+                font-size: 100%;
+            }
+        }
+
+        .our_categories_section {
+
+            .card {
+                margin: auto;
+            }
+
+            .card-body {
+                text-align: center;
+            }
+
+            .card_btn {
+                font-size: 15px;
+                background-color: #ffffff;
+                border: 3px solid black;
+                color: #000;
+            }
+
+            h5 {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+
+        .products_on_sale_title {
+            margin: 30px 0;
+
+            span {
+                font-size: 26px;
+            }
+        }
+
+
+        .products_on_sale_section {
+
+            .card {
+                display: flex;
+                justify-content: center;
+            }
+
+            .card_body_img {
+                margin: 0 50px;
+                padding: 0 17px;
+            }
+
+            .card_body_title {
+                padding: 0 17px;
+                width: 100%;
+            }
+
+            .card img {
+                width: 100%;
+            }
+
+            .card-title {
+                font-weight: 200;
+                font-size: 16px;
+                color: #181a1f;
+            }
+
+            .new_label,
+            .discount_lable {
+                display: none;
+            }
+
+            .card-body {
+                text-align: center;
+                flex: 1 1 auto;
+                min-height: 1px;
+                padding: 1.25rem;
+            }
+
+            .product_price {
+                margin: 10px 0 20px;
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .btn-primary {
+                background-color: #ffffff;
+                color: #000;
+                border: 3px solid #000;
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 2px 0 0;
+                padding: 7px 19px;
+                font-size: 15px;
+                font-family: 'Lato', sans-serif;
+            }
+
+            .cart_text {
+                margin-left: 6px;
+            }
+
+            .product_func_heart_eye {
+                padding: 10px;
+            }
+
+            
+        }
+
+        .blog_title span {
+            font-size: 20px;
+        }
+
+        .featured_products_title span {
+            font-size: 20px;
+        }
+
+        .featured_products_section {
+
+            .card {
+                height: 100%;
+                margin: 0 auto 40px;
+                display: flex;
+            }
+        }
+
+        .follow_instagram span {
+
+            font-size: 20px;
+        }
+
+        .news_letter_section {
+
+            h3 {
+                font-size: 20px;
+                margin: 15px 0;
+            }
+        }
+
+        .page_footer {
+            ul {
+                padding: 0;
+            }
+
+            a {
+                font-size: 14px;
+                font-family: 'Lato, sans-serif';
+            }
+        }
+    
 }
