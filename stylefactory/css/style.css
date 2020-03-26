@@ -357,6 +357,7 @@ span {
 .products_on_sale_section .card {
   height: 100%;
   padding: 0 50px;
+  padding-top: 50px;
 }
 
 .products_on_sale_section .new_label {
@@ -810,7 +811,6 @@ span {
   }
   .billboard {
     width: 100%;
-    max-width: 1295px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -896,7 +896,6 @@ span {
   .hair_extensions button {
     right: 34%;
     margin-top: -1%;
-    font-size: 1px;
     top: 78%;
   }
   .our_categories_title span {
@@ -943,7 +942,6 @@ span {
   }
   .products_on_sale_section .card_body_img {
     margin: 0 50px;
-    padding: 0 17px;
   }
   .products_on_sale_section .card_body_title {
     padding: 0 17px;

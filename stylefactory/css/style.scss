@@ -144,7 +144,6 @@ span {
 
 .billboard {
     width: 100%;
-    // height: auto;
     position: relative;
 
     img {
@@ -345,6 +344,7 @@ span {
     .card {
         height: 100%;
         padding: 0 50px;
+        padding-top: 50px;
     }
 
     .new_label {
@@ -797,7 +797,6 @@ span {
 
     .billboard {
         width: 100%;
-        max-width: 1295px;
         display: flex;
         position: relative;
         background-size: cover;
@@ -893,7 +892,6 @@ span {
         button {
             right: 34%;
             margin-top: -1%;
-            font-size: 1px;
             top: 78%;
         }
     }
@@ -957,7 +955,7 @@ span {
 
         .card_body_img {
             margin: 0 50px;
-            padding: 0 17px;
+            // padding: 0 17px;
         }
 
         .card_body_title {
