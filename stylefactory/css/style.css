@@ -435,7 +435,7 @@ span {
 .products_on_sale_section .btn-primary {
   background-color: #ffffff;
   color: #000;
-  border: 3px solid #000;
+  border: 3px solid black;
   display: inline-block;
   vertical-align: top;
   margin: 0 2px 0 0;
