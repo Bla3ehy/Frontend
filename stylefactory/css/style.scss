@@ -721,12 +721,14 @@ span {
 }
 
 .page_footer_copyright {
+    width: 100%;
     position: absolute;
     bottom: 0px;
+    left: 0;
 }
 
 .page_footer_copyright p {
-    margin: 19px;
+    margin: 13px 0px 10px 50px;
 }
 
 .page_section {
