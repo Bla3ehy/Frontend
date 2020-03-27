@@ -354,8 +354,15 @@ span {
 
 .products_on_sale_section .card {
   height: 100%;
-  padding: 0 50px;
+  padding: 0 30px;
   padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .products_on_sale_section .new_label {
@@ -382,6 +389,11 @@ span {
 
 .products_on_sale_section .card_body_title {
   width: 100%;
+  margin: 0px;
+}
+
+.products_on_sale_section .card_body_img {
+  padding: 0 17px;
 }
 
 .products_on_sale_section .card img {
@@ -390,7 +402,7 @@ span {
 
 .products_on_sale_section .card-title {
   font-weight: 200;
-  font-size: 20px;
+  font-size: 19px;
   color: #181a1f;
 }
 
@@ -400,13 +412,24 @@ span {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 11px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .products_on_sale_section .product_price {
   margin: 10px 0 20px;
   font-size: 24px;
   font-weight: bold;
+}
+
+.products_on_sale_section .product_func {
+  margin-top: auto;
 }
 
 .products_on_sale_section .btn-primary {
@@ -549,6 +572,7 @@ span {
 .featured_products_section .card {
   height: 100%;
   padding: 0 30px;
+  padding-top: 60px;
 }
 
 .featured_products_section .new_label {
@@ -957,6 +981,14 @@ span {
             flex: 1 1 auto;
     min-height: 1px;
     padding: 1.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
   }
   .products_on_sale_section .product_price {
     margin: 10px 0 20px;
@@ -973,6 +1005,7 @@ span {
     padding: 7px 19px;
     font-size: 15px;
     font-family: 'Lato', sans-serif;
+    margin-top: auto;
   }
   .products_on_sale_section .cart_text {
     margin-left: 6px;
