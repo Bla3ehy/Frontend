@@ -485,11 +485,24 @@ span {
   text-align: center;
   border-style: none;
   padding: 10px 0;
+  height: 100%;
 }
 
 .blog_section .card::before {
   content: '';
   border-top: 1px solid #f0f0f0;
+}
+
+.blog_section .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  border: 1px solid black;
 }
 
 .blog_section .blog_date {
@@ -543,6 +556,7 @@ span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: auto;
 }
 
 .blog_section .card_btn {

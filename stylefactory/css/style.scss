@@ -454,6 +454,7 @@ span {
         text-align: center;
         border-style: none;
         padding: 10px 0;
+        height: 100%;
     }
 
     .card::before {
@@ -461,6 +462,12 @@ span {
         border-top: 1px solid #f0f0f0;
     }
 
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid black;
+    }
 
     .blog_date {
         font-weight: bold;
@@ -505,6 +512,7 @@ span {
     .card_body_button {
         display: flex;
         justify-content: center;
+        margin-top: auto;
     }
 
     .card_btn {
