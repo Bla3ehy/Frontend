@@ -502,7 +502,6 @@ span {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  border: 1px solid black;
 }
 
 .blog_section .blog_date {
