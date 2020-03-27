@@ -402,7 +402,7 @@ span {
 
 .products_on_sale_section .card-title {
   font-weight: 200;
-  font-size: 19px;
+  font-size: 16px;
   color: #181a1f;
 }
 
@@ -412,7 +412,6 @@ span {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   min-height: 1px;
-  padding: 11px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,6 +419,7 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+          height: 100%;
 }
 
 .products_on_sale_section .product_price {
@@ -435,7 +435,7 @@ span {
 .products_on_sale_section .btn-primary {
   background-color: #ffffff;
   color: #000;
-  border: 3px solid black;
+  border: 3px solid #000;
   display: inline-block;
   vertical-align: top;
   margin: 0 2px 0 0;
