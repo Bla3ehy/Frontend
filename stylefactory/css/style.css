@@ -622,6 +622,13 @@ span {
           flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .featured_products_section .product_price {
@@ -647,6 +654,7 @@ span {
   padding: 7px 19px;
   font-size: 15px;
   font-family: 'Lato', sans-serif;
+  margin-top: auto;
 }
 
 .featured_products_section .cart_text {
