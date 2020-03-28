@@ -997,10 +997,6 @@ span {
     font-size: 16px;
     color: #181a1f;
   }
-  .products_on_sale_section .new_label,
-  .products_on_sale_section .discount_lable {
-    display: none;
-  }
   .products_on_sale_section .card-body {
     text-align: center;
     -webkit-box-flex: 1;
