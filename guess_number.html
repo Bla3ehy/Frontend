@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>猜數字</title>
+        <style type="text/css">
+        .my-5{
+            font-size: 20px;
+        }
+        
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="border border-info">
+                        <label for="billboard " class="my-5" id="billboard"></label>
+                    </div>
+                    <div>
+                        <button class="my-2 bg-info border-info" id="new_number">產生新數字</button>
+                    </div>
+                    <div>
+                        <input type="text" size="2" class="my-1 border-info w-25 text-center" id="input">
+                    </div>
+                    <div>
+                        <button class="btn border-dark bg-primary my-1 btn_number">1</button>
+                        <button class="btn border-dark bg-primary my-1 btn_number">2</button>
+                        <button class="btn border-dark bg-primary my-1 btn_number">3</button>
+                    </div>
+                    <div>
+                        <button class="btn border-dark bg-success my-1 btn_number">4</button>
+                        <button class="btn border-dark bg-success my-1 btn_number">5</button>
+                        <button class="btn border-dark bg-success my-1 btn_number">6</button>
+                    </div>
+                    <div>
+                        <button class="btn border-dark bg-primary my-1 btn_number">7</button>
+                        <button class="btn border-dark bg-primary my-1 btn_number">8</button>
+                        <button class="btn border-dark bg-primary my-1 btn_number">9</button>
+                    </div>
+                    <div>
+                        <button class="btn border-dark bg-danger my-1" id="clear" onclick="_clear()">X</button>
+                        <button class="btn border-dark bg-success my-1 btn_number">0</button>
+                        <button class="btn border-dark bg-danger my-1" id="enter" onclick="_enter()">V</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="guess_number.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+
+
+    </body>
+
+</html>
