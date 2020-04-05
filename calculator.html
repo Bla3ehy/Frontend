@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="calculator_css/style.css">
+        <title>計算機</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="wrap">
+                <div class="display row">
+                    <p id="output">0</p>
+                </div>
+                <div class="row" id="btn_group">
+                    <div class="row">
+                        <button class="btn_number" id="btn_clear" onclick="_clear()">AC</button>
+                        <button class="btn_plus_number" id="btn_back_space" onclick="backspace()">⇤</button>
+                        <button class="btn_percent" id="btn_percent" onclick="btn_percent()">%</button>
+                        <button class="btn_number btn_operator" onclick="btn_number('/')">÷</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn_number" onclick="btn_number('7')">7</button>
+                        <button class="btn_number" onclick="btn_number('8')">8</button>
+                        <button class="btn_number" onclick="btn_number('9')">9</button>
+                        <button class="btn_number btn_operator" onclick="btn_number('*')">×</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn_number" onclick="btn_number('4')">4</button>
+                        <button class="btn_number" onclick="btn_number('5')">5</button>
+                        <button class="btn_number" onclick="btn_number('6')">6</button>
+                        <button class="btn_number btn_operator" onclick="btn_number('-')">-</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn_number" onclick="btn_number('1')">1</button>
+                        <button class="btn_number" onclick="btn_number('2')">2</button>
+                        <button class="btn_number" onclick="btn_number('3')">3</button>
+                        <button class="btn_number btn_operator" onclick="btn_number('+')">+</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn_number" id="number_zero" onclick="btn_number('0')">0</button>
+                        <button class="btn_number" onclick="btn_decimal()">.</button>
+                        <button class="btn_number btn_operator" id="btn_equals" onclick="equals()"
+                            onkeydown="_equals()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="calculator.js"></script>
+    </body>
+
+</html>

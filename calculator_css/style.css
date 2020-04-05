@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 200px;
+}
+
+.container p {
+  display: inline;
+  font-size: 45px;
+}
+
+.container button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container .btn_operator {
+  background-color: orange;
+  color: white;
+}
+
+.container .row {
+  display: table;
+  table-layout: fixed;
+  width: 200px;
+}
+
+.container .display {
+  width: 200px;
+  text-align: right;
+  background-color: #383838;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px;
+  border-radius: 7px 7px 0 0;
+}
+
+.container .display #output {
+  color: white;
+}
+
+.container .btn_number {
+  width: 50px;
+  height: 40px;
+  font-size: 26px;
+  text-align: center;
+  border: 1px solid black;
+  font-weight: 300;
+  padding-top: 3px;
+  color: black;
+  background-color: silver;
+  display: table-cell;
+}
+
+.container button:hover {
+  background-color: orange;
+}
+
+.container #number_zero {
+  width: 100px;
+  border-radius: 0 0 0 7px;
+}
+
+.container #btn_equals {
+  border-radius: 0 0 7px 0;
+}
+
+.container .btn_plus_number {
+  width: 50px;
+  height: 40px;
+  font-size: 26px;
+  text-align: center;
+  border: 1px solid black;
+  font-weight: 100;
+  padding-top: 3px;
+  color: black;
+  background-color: silver;
+  display: table-cell;
+}
+
+.container .btn_percent {
+  width: 50px;
+  height: 40px;
+  font-size: 26px;
+  text-align: center;
+  border: 1px solid black;
+  font-weight: 100;
+  padding-top: 3px;
+  color: black;
+  background-color: silver;
+  display: table-cell;
+}
+/*# sourceMappingURL=style.css.map */
