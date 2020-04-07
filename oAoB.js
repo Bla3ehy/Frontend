@@ -50,7 +50,11 @@ guess.addEventListener('click', () => {
     span.classList.add('label');
     span.classList.add('label-success');
     string_li.classList.add('list-group-item');
-    span.innerHTML = `${numA}A${numB}B`;
+    span.innerHTML = `${numA}A${numB}B` + ' ' + user_Guess_value;
+    if(numA == 0 && numB == 0){
+        span.classList.remove('label-success');
+        span.classList.add('label-danger');
+    };
     var guessResults = document.getElementById('guessResults');
     string_li.appendChild(span);
     guessResults.appendChild(string_li);
@@ -70,3 +74,7 @@ let cheat = document.getElementById('cheat');
 cheat.addEventListener('click', () => {
     alert('答案是' + guess_number_arr);
 })
+
+
+
+
