@@ -66,7 +66,6 @@ guess.addEventListener('click', function do_guess() {
             guessResults.appendChild(string_li);
         }
     }
-
 });
 
 // 放棄按鈕
@@ -85,8 +84,8 @@ cheat.addEventListener('click', () => {
 })
 
 //鍵盤事件
-// document.getElementById('userGuess').onkeydown = function (event) {
-//     if (event.keyCode == 13) {
-//         do_guess();
-//     }
-// }
+document.getElementById('userGuess').onkeydown = function (event) {
+    if (event.keyCode == 13) {
+        do_guess();
+    }
+}
