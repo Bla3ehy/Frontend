@@ -6,7 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
-
+    <style type="text/css">
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    
+    </style>
 
     <body>
         <h1>台灣縣市郵遞區號資訊列表</h1>
@@ -73,7 +82,7 @@
                         msg.textContent = '發生錯誤，HTTP response代碼：' + xhr.status;
                     }
                 }
-                xhr.open('GET', 'http://127.0.0.1:5501/Examples/TaiwanAddress/TaiwanAddress.json');
+                xhr.open('GET', 'https://raw.githubusercontent.com/Bla3ehy/Json_online/master/TaiwanAddress.json');
                 xhr.send();
                 body.appendChild(table);
             }
