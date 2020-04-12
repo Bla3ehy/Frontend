@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="icon" href="lol_logo.ico" type="image/x-icon" />
+        <title>League of Legends</title>
+
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                box-sizing: border-box;
+                text-decoration: none;
+            }
+
+            .billboard {
+                background-color: #000;
+                color: white;
+                text-align: center;
+                margin-bottom: 40px;
+                /* position: relative; */
+                padding: 15px 0;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .billboard:hover {
+                color: red;
+                transition: .5s;
+            }
+
+            .title {
+                flex-direction: column;
+            }
+
+            .riot_logo {
+                width: 200px;
+            }
+
+            em {
+                font-style: italic;
+                font-weight: 800;
+                font-size: 80px;
+            }
+
+            h5 {
+                font-style: italic;
+                font-size: 24px;
+            }
+            .riot_gif{
+                display: none;
+            }
+            billboard>p {
+                font-size: 14px;
+                font-family: Arial, Helvetica, sans-serif;
+                letter-spacing: 0.08em;
+            }
+
+            .play {
+                background-color: cyan;
+                height: 100%;
+                font-size: 15px;
+                text-decoration: none;
+                color: white;
+                font-weight: 400;
+                padding: 10px 30px;
+                margin-top: 30px;
+            }
+
+            .play:hover {
+                text-decoration: none;
+                color: white;
+                background-color: darkcyan;
+            }
+
+            #card {
+                cursor: pointer;
+            }
+            
+            .name>p {
+                background-color: #000;
+                text-align: start;
+                font-size: 20px;
+                font-weight: 400;
+                color: white;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                padding: 10px 0 10px 15px;
+                font-style: italic;
+                font-weight: 900;
+            }
+
+            .name>p:hover {
+                background-color: aqua;
+            }
+
+            @media screen and (min-width: 1200px) {
+                #card {
+                    max-width: 20%;
+                }
+            }
+            @media screen  and (max-width: 768px){
+
+                .riot_logo{
+                    margin-left: 40px;
+                }
+                .riot_gif{
+                    max-width: 30%;
+                    position: absolute;
+                    top: 140px;
+                    left: 65px;
+                    display: block;
+                }
+                .play{
+                    display: none;
+                }
+                .title em{
+                    font-size: 40px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="billboard">
+            <a href="#"><img class="riot_logo" src="riotgames-logo.png" alt="riot-logo"></a>
+            <img src="https://1.bp.blogspot.com/-PwXIZqtOlW0/W7_IkHCcJfI/AAAAAAAAJL4/LODEGSb7df4iUh6VtD7YGEKXwRcFerlqACLcBGAs/s1600/lol%2B4.0.gif" alt="gif" class="riot_gif">
+            <div class="title">
+                <h5>Choose your</h5>
+                <h1><em>Champions</em></h1>
+                <p>With more than 140 champions, you’ll find the perfect match for your play style. Master one, or master them all.</p>
+            </div>
+            <a href="#" class="play">play now</a>
+
+        </div>
+        <div class="container">
+            <div class="row" id="_row">
+
+            </div>
+        </div>
+
+        <template id="template">
+            <!-- Card -->
+            <div class=" col-xs-12 col-sm-6" id="card">
+                <div class="pic">
+                    <a href="" class="img_a"><img alt="champions" class="w-100 d-block _img" data-object-fit="cover" style="object-fit: cover;"></a>
+                </div>
+                <div class="name" data-toggle="modal" data-target="#exampleModalCenter">
+                    <p></p>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <script>
+            let _row = document.getElementById('_row');
+            let champions_json = '';
+
+            window.onload = function () {
+                let xhr = new XMLHttpRequest;
+                xhr.onload = function () {
+                    champions_json = JSON.parse(this.responseText);
+
+                    champions_json.champions.forEach(item => {
+                        add_img(item);
+                    })
+
+
+                }
+                xhr.open('GET', 'http://127.0.0.1:5500/LOL.json');
+                xhr.send();
+            }
+
+
+
+            function add_img(champions) {
+                //card
+                let template = document.querySelector('#template');
+                let cloneContent = template.content.cloneNode(true);
+                let _img = cloneContent.querySelector('._img');
+                _img.setAttribute('src', champions.profileImageUrl);
+                let p = cloneContent.querySelector('p');
+                p.textContent = champions.name;
+                let img_a = cloneContent.querySelector('.img_a');
+                img_a.setAttribute('href', champions.splashImageUrl);
+                let name = cloneContent.querySelector('.name')
+                name.setAttribute('data-target', `#${champions.id}`)
+                //modal
+                let modal_center = cloneContent.getElementById('exampleModalCenter');
+                modal_center.setAttribute('id', `${champions.id}`);
+                let modal_title = cloneContent.querySelector('.modal-title');
+                modal_title.textContent = champions.name;
+                let modal_body = cloneContent.querySelector('.modal-body');
+                modal_body.innerHTML = `Roles : ${champions.roles}<br>`
+                for (let i in champions.stats) {
+                    modal_body.innerHTML += `${i} : ${champions.stats[i]}<br>`;
+                }
+                _row.appendChild(cloneContent);
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+    </body>
+
+</html>
