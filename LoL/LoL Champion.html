@@ -229,8 +229,8 @@
                 modal_title.textContent = champions.name;
                 let modal_body = cloneContent.querySelector('.modal-body');
                 modal_body.innerHTML = `Roles : ${champions.roles}<br>`
-                for (let i in champions.stats) {
-                    modal_body.innerHTML += `${i} : ${champions.stats[i]}<br>`;
+                for (let i in champions.status) {
+                    modal_body.innerHTML += `${i} : ${champions.status[i]}<br>`;
                 }
                 _row.appendChild(cloneContent);
             }
