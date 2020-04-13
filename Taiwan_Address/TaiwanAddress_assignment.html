@@ -7,14 +7,12 @@
         <title>Document</title>
     </head>
     <style type="text/css">
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-    
-    
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
     </style>
 
     <body>
@@ -46,46 +44,81 @@
             table.appendChild(tbody);
             body.appendChild(table);
 
-            window.onload = function () {
-                let xhr = new XMLHttpRequest;
-                xhr.onload = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        //1.load JSON
-                        zipcodeArray = JSON.parse(this.responseText);
+            // window.onload = function () {
+            //     let xhr = new XMLHttpRequest;
+            //     xhr.onload = function () {
+            //         if (xhr.readyState == 4 && xhr.status == 200) {
+            //             //1.load JSON
+            //             zipcodeArray = JSON.parse(this.responseText);
 
-                        //2.修改json資料
-                        let ZipCode = [];
-                        zipcodeArray.forEach((item, index) => {
-                            let _city = item.CityName;
-                            let _districts = [];
-                            item.AreaList.forEach((item, index) => {
-                                _districts.push({
-                                    District: item.AreaName,
-                                    Zip: item.ZipCode
-                                })
+            //             //2.修改json資料
+            //             let ZipCode = [];
+            //             zipcodeArray.forEach((item, index) => {
+            //                 let _city = item.CityName;
+            //                 let _districts = [];
+            //                 item.AreaList.forEach((item, index) => {
+            //                     _districts.push({
+            //                         District: item.AreaName,
+            //                         Zip: item.ZipCode
+            //                     })
+            //                 })
+
+            //                 let _cityObject = {
+            //                     City: _city,
+            //                     Districts: _districts
+            //                 };
+            //                 ZipCode.push(_cityObject);
+            //             });
+            //             //建立thead
+            //             addThead();
+
+            //             //迭代陣列, 每個Item是一個Object, 再用.values()取值,回傳陣列
+            //             ZipCode.forEach((item) => {
+            //                 addTbody(Object.values(item));
+            //             });
+            //         } else {
+            //             msg.textContent = '發生錯誤，HTTP response代碼：' + xhr.status;
+            //         }
+            //     }
+            //     xhr.open('GET', 'https://raw.githubusercontent.com/Bla3ehy/Json_online/master/TaiwanAddress.json');
+            //     xhr.send();
+            //     body.appendChild(table);
+            // }
+            
+            //try fetch
+            fetch('https://raw.githubusercontent.com/Bla3ehy/Json_online/master/TaiwanAddress.json')
+                .then(response => response.text())
+                .then(text => {
+                    //1.load JSON
+                    zipcodeArray = JSON.parse(text);
+
+                    //2.修改json資料
+                    let ZipCode = [];
+                    zipcodeArray.forEach((item, index) => {
+                        let _city = item.CityName;
+                        let _districts = [];
+                        item.AreaList.forEach((item, index) => {
+                            _districts.push({
+                                District: item.AreaName,
+                                Zip: item.ZipCode
                             })
+                        })
 
-                            let _cityObject = {
-                                City: _city,
-                                Districts: _districts
-                            };
-                            ZipCode.push(_cityObject);
-                        });
-                        //建立thead
-                        addThead();
+                        let _cityObject = {
+                            City: _city,
+                            Districts: _districts
+                        };
+                        ZipCode.push(_cityObject);
+                    });
+                    //建立thead
+                    addThead();
 
-                        //迭代陣列, 每個Item是一個Object, 再用.values()取值,回傳陣列
-                        ZipCode.forEach((item) => {
-                            addTbody(Object.values(item));
-                        });
-                    } else {
-                        msg.textContent = '發生錯誤，HTTP response代碼：' + xhr.status;
-                    }
-                }
-                xhr.open('GET', 'https://raw.githubusercontent.com/Bla3ehy/Json_online/master/TaiwanAddress.json');
-                xhr.send();
-                body.appendChild(table);
-            }
+                    //迭代陣列, 每個Item是一個Object, 再用.values()取值,回傳陣列
+                    ZipCode.forEach((item) => {
+                        addTbody(Object.values(item));
+                    });
+                })
+
 
             function addThead(titlesArray) {
                 let templateTitle = document.querySelector('#templateTitle');
@@ -95,7 +128,6 @@
 
             function addTbody(rowArray) {
                 let templateBody = document.querySelector('#templateBody');
-                // console.log(rowArray);
                 // for (let i = 0; i < rowArray.length; i++) {
                 //     let cloneContent = templateBody.content.cloneNode(true);
                 //     let tds = cloneContent.querySelectorAll('td');
