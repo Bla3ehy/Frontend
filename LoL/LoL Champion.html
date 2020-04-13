@@ -56,9 +56,11 @@
                 font-style: italic;
                 font-size: 24px;
             }
-            .riot_gif{
+
+            .riot_gif {
                 display: none;
             }
+
             billboard>p {
                 font-size: 14px;
                 font-family: Arial, Helvetica, sans-serif;
@@ -85,7 +87,7 @@
             #card {
                 cursor: pointer;
             }
-            
+
             .name>p {
                 background-color: #000;
                 text-align: start;
@@ -107,22 +109,26 @@
                     max-width: 20%;
                 }
             }
-            @media screen  and (max-width: 768px){
 
-                .riot_logo{
+            @media screen and (max-width: 768px) {
+
+                .riot_logo {
                     margin-left: 40px;
                 }
-                .riot_gif{
+
+                .riot_gif {
                     max-width: 30%;
                     position: absolute;
                     top: 140px;
                     left: 65px;
                     display: block;
                 }
-                .play{
+
+                .play {
                     display: none;
                 }
-                .title em{
+
+                .title em {
                     font-size: 40px;
                 }
             }
@@ -132,15 +138,18 @@
     <body>
         <div class="billboard">
             <a href="#"><img class="riot_logo" src="riotgames-logo.png" alt="riot-logo"></a>
-            <img src="https://1.bp.blogspot.com/-PwXIZqtOlW0/W7_IkHCcJfI/AAAAAAAAJL4/LODEGSb7df4iUh6VtD7YGEKXwRcFerlqACLcBGAs/s1600/lol%2B4.0.gif" alt="gif" class="riot_gif">
+            <img src="https://1.bp.blogspot.com/-PwXIZqtOlW0/W7_IkHCcJfI/AAAAAAAAJL4/LODEGSb7df4iUh6VtD7YGEKXwRcFerlqACLcBGAs/s1600/lol%2B4.0.gif"
+                alt="gif" class="riot_gif">
             <div class="title">
                 <h5>Choose your</h5>
                 <h1><em>Champions</em></h1>
-                <p>With more than 140 champions, you’ll find the perfect match for your play style. Master one, or master them all.</p>
+                <p>With more than 140 champions, you’ll find the perfect match for your play style. Master one, or
+                    master them all.</p>
             </div>
             <a href="#" class="play">play now</a>
 
         </div>
+
         <div class="container">
             <div class="row" id="_row">
 
@@ -151,7 +160,8 @@
             <!-- Card -->
             <div class=" col-xs-12 col-sm-6" id="card">
                 <div class="pic">
-                    <a href="" class="img_a"><img alt="champions" class="w-100 d-block _img" data-object-fit="cover" style="object-fit: cover;"></a>
+                    <a href="" class="img_a"><img alt="champions" class="w-100 d-block _img" data-object-fit="cover"
+                            style="object-fit: cover;"></a>
                 </div>
                 <div class="name" data-toggle="modal" data-target="#exampleModalCenter">
                     <p></p>
@@ -183,16 +193,19 @@
             window.onload = function () {
                 let xhr = new XMLHttpRequest;
                 xhr.onload = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        
+                    } else {
+                        alert('發生錯誤，HTTP response代碼：' + xhr.status);
+                    }
                     champions_json = JSON.parse(this.responseText);
-
                     champions_json.champions.forEach(item => {
                         add_img(item);
                     })
+                    xhr.open('GET', 'https://raw.githubusercontent.com/Bla3ehy/Json_online/master/LOL.json');
+                    xhr.send();
                 }
-                xhr.open('GET', 'https://raw.githubusercontent.com/Bla3ehy/Json_online/master/LOL.json');
-                xhr.send();
             }
-
 
             function add_img(champions) {
                 //card
