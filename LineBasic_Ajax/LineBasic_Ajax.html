@@ -18,20 +18,6 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
         <script>
-            $.ajax({
-                url: 'https://raw.githubusercontent.com/apprunner/FileStorage/master/Temperature.json',
-                type: "get",
-                dataType: "JSON",
-                success: function (response) {
-                    chart.data.labels = response.Label;
-                    chart.data.datasets[0].label = response.City;
-                    chart.data.datasets[0].data = response.Data;
-                    chart.update();
-                }
-            });
-
-            
-
             var ctx = document.getElementById('lineChart');
             var chart = new Chart(ctx, {
                 type: 'line',
@@ -66,6 +52,17 @@
                             fontColor: 'black',
                         }
                     }
+                }
+            });
+            $.ajax({
+                url: 'https://raw.githubusercontent.com/apprunner/FileStorage/master/Temperature.json',
+                type: "get",
+                dataType: "JSON",
+                success: function (response) {
+                    chart.data.labels = response.Label;
+                    chart.data.datasets[0].label = response.City;
+                    chart.data.datasets[0].data = response.Data;
+                    chart.update();
                 }
             });
         </script>
