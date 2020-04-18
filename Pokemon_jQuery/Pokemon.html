@@ -35,7 +35,7 @@
                 let img = $('<img>');
                 img.attr('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${no}.png`);
                 img.on('click', removeImg);
-                $('#container').append(img);
+                $container.append(img);
                 index++;
             }
 
@@ -52,7 +52,7 @@
                     let img = $('<img>');
                     img.attr('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`);
                     img.on('click', removeImg);
-                    $('#container').append(img);
+                    $container.append(img);
                 }
             }
 
