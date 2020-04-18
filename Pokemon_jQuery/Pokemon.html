@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Pokemon list</title>
+    </head>
+
+    <body>
+        <h1>寶可夢圖鑑列表</h1>
+        <button id='addone' onclick="AddPokemon()">Click +1</button>
+        <button id='removeone' onclick="removePokemon()">Clear -1</button>
+        <button id='loadall' onclick="allPokemon()">Load All</button>
+
+        <div id='container'>
+
+        </div>
+        <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script>
+            let $container = $('#container');
+
+            $(window).on('load', function appendPokemon() {
+                let img = $('<img>');
+                img.attr('src', 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png');
+                $('#container').append(img);
+            });
+
+            let index = 2;
+            //+1
+            function AddPokemon() {
+                let no = index.toString().padStart(3, '0');
+                let img = $('<img>');
+                img.attr('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${no}.png`);
+                img.on('click', removeImg);
+                $('#container').append(img);
+                index++;
+            }
+
+
+            function removePokemon() {
+                $('img').last().remove();
+                index--;
+                alert('減少了一隻')
+            }
+
+            function allPokemon() {
+                for (index; index <= 890; index++) {
+                    let fileName = index.toString().padStart(3, '0');
+                    let img = $('<img>');
+                    img.attr('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`);
+                    img.on('click', removeImg);
+                    $('#container').append(img);
+                }
+            }
+
+            function removeImg(event) {
+                container.removeChild(event.target);
+            }
+        </script>
+    </body>
+
+</html>
