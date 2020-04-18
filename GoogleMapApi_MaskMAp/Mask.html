@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            /* Set the size of the div element that contains the map */
+            .body {
+                position: relative;
+            }
+
+            #map {
+                height: 450px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+            }
+
+            .pic_info {
+                max-width: 15%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                right: 0px;
+                top: 315px;
+                list-style: none;
+                background-color: white;
+
+            }
+
+            .pic_info img {
+                max-width: 12%;
+            }
+
+            .iw-title {
+                background-color: #48b5e9;
+                color: white;
+                font-size: 22px;
+            }
+
+            .iw-container p {
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            @media screen and (min-width: 1200px) {
+                .s_city {
+                    margin-top: 5px;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .row_1 {
+                    margin-bottom: 5px;
+                }
+
+                .row_2 {
+                    margin-bottom: 5px;
+                }
+
+                .row_3 {
+                    margin-bottom: 5px;
+                }
+
+                .pic_info {
+                    max-width: 39%;
+                    top: 314px
+                }
+            }
+        </style>
+        <title>The Mask Map</title>
+        <link rel="icon" href="/picture/m.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+        <!--The div element for the map -->
+        <div id="map"></div>
+        <ul class="list-group pic_info">
+            <li><img src="picture/mask.png" alt="mask available" class="d-inline-block">口罩庫存皆齊全</li>
+            <li><img src="picture/adult.png" alt="only adult available" class="d-inline-block">成人口罩庫存齊全</li>
+            <li><img src="picture/child.png" alt="only child available" class="d-inline-block">兒童口罩庫存齊全</li>
+            <li><img src="picture/cross.png" alt="mask unavailable" class="d-inline-block">口罩庫存皆不足</li>
+        </ul>
+        <h2 class="text-center">請選擇行政區</h2>
+        <div class="mt-2 mb-2 justify-content-start">
+            <button class="btn btn-primary btn_city row_1" type="button">臺北市</button>
+            <button class="btn btn-primary btn_city row_1" type="button">新北市</button>
+            <button class="btn btn-primary btn_city row_1" type="button">桃園市</button>
+            <button class="btn btn-primary btn_city row_1" type="button">臺中市</button>
+            <button class="btn btn-primary btn_city row_1" type="button">臺南市</button>
+            <button class="btn btn-primary btn_city row_1" type="button">高雄市</button>
+            <button class="btn btn-primary btn_city row_2" type="button">基隆市</button>
+            <button class="btn btn-primary btn_city row_2" type="button">新竹市</button>
+            <button class="btn btn-primary btn_city row_2" type="button">嘉義市</button>
+            <button class="btn btn-primary btn_city row_2" type="button">新竹縣</button>
+            <button class="btn btn-primary btn_city row_2" type="button">苗栗縣</button>
+            <button class="btn btn-primary btn_city row_2" type="button">彰化縣</button>
+            <button class="btn btn-primary btn_city row_3" type="button">南投縣</button>
+            <button class="btn btn-primary btn_city row_3" type="button">雲林縣</button>
+            <button class="btn btn-primary btn_city row_3" type="button">嘉義縣</button>
+            <button class="btn btn-primary btn_city row_3" type="button">屏東縣</button>
+            <button class="btn btn-primary btn_city row_3 s_city" type="button">宜蘭縣</button>
+            <button class="btn btn-primary btn_city row_3 s_city" type="button">花蓮縣</button>
+            <button class="btn btn-primary btn_city row_4 s_city" type="button">臺東縣</button>
+            <button class="btn btn-primary btn_city row_4 s_city" type="button">澎湖縣</button>
+            <button class="btn btn-primary btn_city row_4 s_city" type="button">金門縣</button>
+            <button class="btn btn-primary btn_city row_4 s_city" type="button">連江縣</button>
+        </div>
+        <h3 class="text-center">出門戴口罩，勤洗手，新冠病毒遠離你</h3>
+        <h5 class="text-center">疾管署關心您！</h5>
+
+        <script>
+            var map;
+            var geocoder;
+            let btn_cities = document.querySelectorAll('.btn_city');
+            var city = [{
+                    name: "臺北市",
+                    latlng: {
+                        lat: 25.0375465,
+                        lng: 121.562244
+                    }
+                },
+                {
+                    name: "新北市",
+                    latlng: {
+                        lat: 25.0123073,
+                        lng: 121.4632665
+                    }
+                },
+                {
+                    name: "桃園市",
+                    latlng: {
+                        lat: 24.9931617,
+                        lng: 121.2988176
+                    }
+                },
+                {
+                    name: "臺中市",
+                    latlng: {
+                        lat: 24.1892645,
+                        lng: 120.6090681
+                    }
+                },
+                {
+                    name: "臺南市",
+                    latlng: {
+                        lat: 22.9922336,
+                        lng: 120.18299
+                    }
+                },
+                {
+                    name: "高雄市",
+                    latlng: {
+                        lat: 22.62025,
+                        lng: 120.3069565
+                    }
+                },
+                {
+                    name: "基隆市",
+                    latlng: {
+                        lat: 25.1303462,
+                        lng: 121.7439138
+                    }
+                },
+                {
+                    name: "新竹市",
+                    latlng: {
+                        lat: 24.7929419,
+                        lng: 120.9493054
+                    }
+                },
+                {
+                    name: "嘉義市",
+                    latlng: {
+                        lat: 23.4812545,
+                        lng: 120.4514023
+                    }
+                },
+                {
+                    name: "新竹縣",
+                    latlng: {
+                        lat: 24.8268841,
+                        lng: 121.010715
+                    }
+                },
+                {
+                    name: "苗栗縣",
+                    latlng: {
+                        lat: 24.5648599,
+                        lng: 120.8185503
+                    }
+                },
+                {
+                    name: "彰化縣",
+                    latlng: {
+                        lat: 23.9821501,
+                        lng: 120.4006255
+                    }
+                },
+                {
+                    name: "南投縣",
+                    latlng: {
+                        lat: 23.9026841,
+                        lng: 120.6883151
+                    }
+                },
+                {
+                    name: "雲林縣",
+                    latlng: {
+                        lat: 23.6992351,
+                        lng: 120.5241337
+                    }
+                },
+                {
+                    name: "嘉義縣",
+                    latlng: {
+                        lat: 23.4586677,
+                        lng: 120.2907749
+                    }
+                },
+                {
+                    name: "屏東縣",
+                    latlng: {
+                        lat: 22.6830408,
+                        lng: 120.4857744
+                    }
+                },
+                {
+                    name: "宜蘭縣",
+                    latlng: {
+                        lat: 24.7305437,
+                        lng: 121.7619899
+                    }
+                },
+                {
+                    name: "花蓮縣",
+                    latlng: {
+                        lat: 23.9848788,
+                        lng: 121.5721311
+                    }
+                },
+                {
+                    name: "臺東縣",
+                    latlng: {
+                        lat: 22.7539301,
+                        lng: 121.1429397
+                    }
+                },
+                {
+                    name: "澎湖縣",
+                    latlng: {
+                        lat: 23.568495,
+                        lng: 119.5668485
+                    }
+                },
+                {
+                    name: "金門縣",
+                    latlng: {
+                        lat: 24.4371954,
+                        lng: 118.3171488
+                    }
+                },
+                {
+                    name: "連江縣",
+                    latlng: {
+                        lat: 26.1572524,
+                        lng: 119.9482926
+                    }
+                }
+            ];
+
+            // Initialize and add the map
+            function initMap() {
+                // The location of taipei 101
+                var taiwan = {
+                    lat: 25.0169626,
+                    lng: 121.2254899
+                };
+                // The map, centered at taipei 101
+                map = new google.maps.Map(
+                    document.getElementById('map'), {
+                        zoom: 12,
+                        center: taiwan
+                    });
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        map.setCenter(pos);
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
+            }
+
+            function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                infoWindow.setPosition(pos);
+                infoWindow.setContent(browserHasGeolocation ?
+                    'Error: The Geolocation service failed.' :
+                    'Error: Your browser doesn\'t support geolocation.');
+                infoWindow.open(map);
+            }
+
+            fetch('https://findmasks.herokuapp.com/places')
+                .then(response => response.json())
+                .then(text => {
+                    var marker = [];
+                    let infowindow = [];
+                    var _infowindow = '';
+                    for (let i = 0; i < text.features.length; i++) {
+                        var lng_lat = text.features[i].geometry.coordinates;
+                        var _position = new google.maps.LatLng(lng_lat[1], lng_lat[0]);
+                        var name = text.features[i].properties.name;
+                        var masksLeft = text.features[i].properties.masksLeft;
+                        var childMasksLeft = text.features[i].properties.childMasksLeft;
+
+                        function add_markers(features) {
+                            if (masksLeft > 0 && childMasksLeft > 0) {
+                                return '../picture/mask.png';
+                            } else if (masksLeft > 0 && childMasksLeft == 0) {
+                                return '../picture/adult.png';
+                            } else if (masksLeft == 0 && childMasksLeft > 0) {
+                                return '../picture/child.png';
+                            } else if (masksLeft == 0 && childMasksLeft == 0) {
+                                return '../picture/cross.png'
+                            }
+                        };
+
+                        var markers = add_markers();
+                        marker[i] = new google.maps.Marker({
+                            position: _position,
+                            map: map,
+                            icon: {
+                                url: markers,
+                                scaledSize: new google.maps.Size(25, 25)
+                            }
+                        });
+                        infowindow[i] = new google.maps.InfoWindow({
+                            content: `<div class="iw-container">
+                                        <div class="iw-title"><p><strong>店名:${name}</strong></p></div>
+                                        <p>成人口罩:${masksLeft}</p>
+                                        <p>兒童口罩:${childMasksLeft}</p></div>`,
+                        });
+                        marker[i].addListener('click', function () {
+                            if (_infowindow !== '') {
+                                _infowindow.close();
+                                _infowindow = '';
+                            } else {
+                                infowindow[i].open(map, marker[i]);
+                                _infowindow = infowindow[i];
+                            };
+                            if (marker[i].getAnimation() == null) {
+                                marker[i].setAnimation(google.maps.Animation.BOUNCE);
+                            } else {
+                                marker[i].setAnimation(null);
+                            };
+                        });
+                    }
+                })
+                .catch(function ex(ex) {
+                    alert('Error...');
+                })
+            //按鈕搜尋行政區
+            btn_cities.forEach(item => {
+                item.addEventListener('click', cities);
+            });
+
+            function cities() {
+                city.forEach(item => {
+                    if (item.name == this.innerText) {
+                        map.setCenter(item.latlng);
+                    }
+                })
+            };
+        </script>
+
+
+
+
+
+
+
+
+
+
+        <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlKWP4uWjQIR3WDAWLAu6rUhBfc3_ppag&callback=initMap">
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+    </body>
+
+</html>
