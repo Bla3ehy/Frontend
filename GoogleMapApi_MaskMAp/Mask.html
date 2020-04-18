@@ -76,17 +76,17 @@
             }
         </style>
         <title>The Mask Map</title>
-        <link rel="icon" href="/picture/m.ico" type="image/x-icon" />
+        <link rel="icon" href="../GoogleMapApi_MaskMAp/picture/m.ico" type="image/png" />
     </head>
 
     <body>
         <!--The div element for the map -->
         <div id="map"></div>
         <ul class="list-group pic_info">
-            <li><img src="picture/mask.png" alt="mask available" class="d-inline-block">口罩庫存皆齊全</li>
-            <li><img src="picture/adult.png" alt="only adult available" class="d-inline-block">成人口罩庫存齊全</li>
-            <li><img src="picture/child.png" alt="only child available" class="d-inline-block">兒童口罩庫存齊全</li>
-            <li><img src="picture/cross.png" alt="mask unavailable" class="d-inline-block">口罩庫存皆不足</li>
+            <li><img src="../GoogleMapApi_MaskMAp/picture/mask.png" alt="mask available" class="d-inline-block">口罩庫存皆齊全</li>
+            <li><img src="../GoogleMapApi_MaskMAp/picture/adult.png" alt="only adult available" class="d-inline-block">成人口罩庫存齊全</li>
+            <li><img src="../GoogleMapApi_MaskMAp/picture/child.png" alt="only child available" class="d-inline-block">兒童口罩庫存齊全</li>
+            <li><img src="../GoogleMapApi_MaskMAp/picture/cross.png" alt="mask unavailable" class="d-inline-block">口罩庫存皆不足</li>
         </ul>
         <h2 class="text-center">請選擇行政區</h2>
         <div class="mt-2 mb-2 justify-content-start">
@@ -249,8 +249,8 @@
                 {
                     name: "臺東縣",
                     latlng: {
-                        lat: 22.7539301,
-                        lng: 121.1429397
+                        lat: 22.797226,
+                        lng: 121.071360
                     }
                 },
                 {
@@ -326,13 +326,13 @@
 
                         function add_markers(features) {
                             if (masksLeft > 0 && childMasksLeft > 0) {
-                                return '../picture/mask.png';
+                                return '../GoogleMapApi_MaskMAp/picture/mask.png';
                             } else if (masksLeft > 0 && childMasksLeft == 0) {
-                                return '../picture/adult.png';
+                                return '../GoogleMapApi_MaskMAp/picture/adult.png';
                             } else if (masksLeft == 0 && childMasksLeft > 0) {
-                                return '../picture/child.png';
+                                return '../GoogleMapApi_MaskMAp/picture/child.png';
                             } else if (masksLeft == 0 && childMasksLeft == 0) {
-                                return '../picture/cross.png'
+                                return '../GoogleMapApi_MaskMAp/picture/cross.png'
                             }
                         };
 
