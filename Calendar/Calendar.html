@@ -50,8 +50,9 @@
             .holiday {
                 background-color: lightcoral;
             }
-            @media screen  and (max-width: 768px){
-                .modal_btn{
+
+            @media screen and (max-width: 768px) {
+                .modal_btn {
                     width: 55px;
                     left: 350px;
                     top: 40px;
@@ -66,7 +67,7 @@
             <button type="button" class="btn btn-danger modal_btn" data-toggle="modal" data-target="#exampleModal1">
                 New
             </button>
-            
+
             <div class="row d-flex justify-content-center">
                 <div class=" text-right">
                     <button type="button" id="MinerMonth" class="btn btn-light">
@@ -127,8 +128,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p>顏色</p>
-                                        <input type="color" id="modal_color" aria-label="Default"
+                                        <p>背景顏色</p>
+                                        <input type="color" id="modal_background_color" aria-label="Default"
+                                            aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>字體顏色</p>
+                                        <input type="color" id="modal_font_color" aria-label="Default"
                                             aria-describedby="inputGroup-sizing-default">
                                     </div>
                                 </div>
@@ -249,15 +257,17 @@
 
                     //日曆主程式
                     function Calendar(year, month, get_first_day, get_month_days) {
-                        var today = new Date().getDate();
-                        var o = 1; //any variable
-                        var p = 1; //any variable
-                        var w = 2 - get_first_day;
-                        for (var i = 1; i <= 6; i++) {
-                            var _tr = document.createElement("tr");
+                        let today = new Date().getDate();
+                        let this_month = new Date().getMonth();
+                        let right_now = new Date(year, month - 1, today);
+                        let o = 1; //any variable
+                        let p = 1; //any variable
+                        let w = 2 - get_first_day;
+                        for (let i = 1; i <= 6; i++) {
+                            let _tr = document.createElement("tr");
                             _tr.style.height = '75px'
-                            for (var j = 1; j <= 7; j++) {
-                                var _td = document.createElement("td");
+                            for (let j = 1; j <= 7; j++) {
+                                let _td = document.createElement("td");
                                 _td.style.width = '150px';
                                 if (get_first_day == 0) {
                                     get_first_day = 7;
@@ -265,29 +275,29 @@
                                 }
                                 if (o < get_first_day || p > get_month_days) {
                                     o++;
-                                    var current = new Date(year, month - 1, w);
+                                    let current = new Date(year, month - 1, w);
                                     _td.innerText = current.getDate();
                                     w++;
                                     _td.className = 'text-muted'
                                     _tr.appendChild(_td);
+                                } else if (p == today) {
+                                    _td.innerText = p;
+                                    storage(_td, year, month, p);
+                                    p++;
+                                    _td.className = 'bg-danger'
+                                    _tr.appendChild(_td);
                                 } else {
-                                    if (p == today) {
-                                        _td.innerText = p;
-                                        storage(_td, year, month, p);
-                                        p++;
-                                        _td.className = 'bg-danger';
-                                        _tr.appendChild(_td);
-                                    } else {
-                                        _td.innerText = p;
-                                        storage(_td, year, month, p);
-                                        p++;
-                                        _tr.appendChild(_td);
-                                    }
+                                    _td.innerText = p;
+                                    storage(_td, year, month, p);
+                                    p++;
+                                    _tr.appendChild(_td);
                                 }
                             }
                             _tbody.appendChild(_tr);
                         }
+
                     }
+
 
                     document.getElementById('AddMonth').addEventListener('click', () => {
                         reset();
@@ -326,7 +336,8 @@
                         let _modal_time = document.getElementById('modal_time').value;
                         let _modal_event = document.getElementById('modal_event').value;
                         let _modal_date = document.getElementById('modal_date').value;
-                        let _modal_color = document.getElementById('modal_color').value;
+                        let _modal_background_color = document.getElementById('modal_background_color').value;
+                        let _modal_font_color = document.getElementById('modal_font_color').value
                         let arr = _modal_date.split('-');
                         let d = arr[2];
                         let m = arr[1];
@@ -336,7 +347,8 @@
                             'month': m,
                             'day': d,
                             'time': _modal_time,
-                            'color': _modal_color,
+                            'backgroundcolor': _modal_background_color,
+                            'fontcolor':_modal_font_color,
                             'event': _modal_event,
                         }
                         localStorage.setItem(_uuid(), JSON.stringify(item));
@@ -360,7 +372,8 @@
                                 let _li = document.createElement("li");
                                 _li.className = 'list-group-item btn';
                                 _li.style.fontSize = "15px";
-                                _li.style.backgroundColor = obj_json.color;
+                                _li.style.backgroundColor = obj_json.backgroundcolor;
+                                _li.style.color = obj_json.fontcolor;
                                 _li.style.fontFamily = 'Arial';
                                 _li.id = obj;
                                 _li.innerText = obj_json.time + " " + obj_json.event;
