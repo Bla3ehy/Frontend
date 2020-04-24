@@ -63,189 +63,373 @@
 
         <!-- Optional JavaScript -->
         <script>
-            var products = {
-                iPhone: {
-                    big_picture: 'apple_picture/iPhone11_all_pic.png',
-
-                    feature: [{
-                            color: '白',
-                            colorValue: '#ffffff',
-                            img_src: 'apple_picture/iPhone-white.png'
-                        },
-                        {
-                            color: '紅',
-                            colorValue: '#ff0000',
-                            img_src: 'apple_picture/iPhone11_red.png'
-                        },
-                        {
-                            color: '黑',
-                            colorValue: '#000000',
-                            img_src: 'apple_picture/iPhone-black.png'
-                        }
-                    ],
-
-                    spec: [{
-                            storage: '64GB',
-                            price: 24900
-                        },
-                        {
-                            storage: '128GB',
-                            price: 26900
-                        },
-                        {
-                            storage: '256GB',
-                            price: 30400
-                        }
-                    ]
-                },
-                iPad: {
-                    big_picture: 'apple_picture/iPad_all.png',
-
-                    feature: [{
-                            color: '白',
-                            colorValue: '#ffffff',
-                            img_src: 'apple_picture/iPad-silver.png'
-                        },
-                        {
-                            color: '玫瑰金',
-                            colorValue: '#FFE4E1',
-                            img_src: 'apple_picture/iPad-gold.png'
-                        },
-                        {
-                            color: '黑',
-                            colorValue: '#000000',
-                            img_src: 'apple_picture/iPad-gray.png'
-                        }
-                    ],
-                    spec: [{
-                            storage: '128GB',
-                            price: 25900
-                        },
-                        {
-                            storage: '256GB',
-                            price: 29400
-                        },
-                        {
-                            storage: '512GB',
-                            price: 36400
-                        },
-                    ]
-                },
-                macBook: {
-                    big_picture: 'apple_picture/mbp13-big-picture.png',
-                    feature: [{
-                            color: '白',
-                            colorValue: '#ffffff',
-                            img_src: 'apple_picture/mbp13-silver.png'
-                        },
-                        {
-                            color: '灰',
-                            colorValue: '#5B5B5B',
-                            img_src: 'apple_picture/mbp13-gray.png'
-                        }
-                    ],
-                    spec: [{
-                            storage: '128GB',
-                            price: 42900
-                        },
-                        {
-                            storage: '256GB',
-                            price: 48900
-                        }
-                    ]
+            var $jscomp = $jscomp || {};
+            $jscomp.scope = {};
+            $jscomp.createTemplateTagFirstArg = function (a) {
+                return a.raw = a
+            };
+            $jscomp.createTemplateTagFirstArgWithRaw = function (a, c) {
+                a.raw = c;
+                return a
+            };
+            $jscomp.arrayIteratorImpl = function (a) {
+                var c = 0;
+                return function () {
+                    return c < a.length ? {
+                        done: !1,
+                        value: a[c++]
+                    } : {
+                        done: !0
+                    }
                 }
             };
-            var pic = document.getElementById('picture');
-            var feature_color = document.getElementById('feature_color');
-            var storage_price = document.getElementById('storage_price');
-            var btn = document.querySelectorAll('.btn');
-            var price_span = document.createElement('span');
-            btn.forEach((item) => {
-                item.addEventListener('click', function () {
-                    pic.innerHTML = '';
-                    feature_color.innerHTML = '';
-                    storage_price.innerHTML = '';
-                    price_span.innerHTML = '';
-
-                    // 大圖
-                    var img = document.createElement('img');
-                    img.setAttribute('src', products[item.innerText].big_picture);
-                    pic.appendChild(img);
-                    img.style.width = '80%';
-
-                    // 顏色區塊
-                    var h3 = document.createElement('h3');
-                    h3.innerText = '顏色';
-                    feature_color.appendChild(h3);
-                    var btn_color_div = document.createElement('div');
-                    for (let item of products[this.innerText].feature) {
-                        var color_btn = document.createElement('button');
-                        var circle_div = document.createElement('div');
-                        var span_color = document.createElement('span');
-
-                        //color_btn_div
-                        btn_color_div.classList.add('d-flex');
-                        btn_color_div.classList.add('flex-nowrap');
-                        btn_color_div.style.marginBottom = '100px';
-
-
-                        //span
-                        span_color.innerHTML = '<br>' + item.color;
-                        span_color.style.fontSize = '20px';
-                        span_color.style.marginTop = '100px'
-
-
-                        //circle_div(顏色圓形)
-                        circle_div.style.backgroundColor = `${item.colorValue}`;
-                        circle_div.style.width = '30px';
-                        circle_div.style.height = '30px';
-                        circle_div.style.borderRadius = '50%';
-                        circle_div.classList.add('mx-auto')
-
-                        //color_btn
-                        color_btn.style.width = '20%';
-                        color_btn.style.height = '120px';
-                        color_btn.style.marginRight = '50px';
-                        color_btn.style.marginTop = '70px';
-
-                        //元素appendChild到各自的父層
-                        color_btn.appendChild(circle_div);
-                        color_btn.appendChild(span_color);
-                        btn_color_div.appendChild(color_btn);
-                        feature_color.appendChild(btn_color_div);
-
-                        //生成記憶體＆價格的按鈕
-                        color_btn.addEventListener('click', () => {
-                            img.setAttribute('src', item.img_src);
-                            storage_price.innerHTML = '';
-                            storage_price.style.flexWrap = 'nowrap';
-                            storage_price.style.justifyContent = 'space-between';
-
-                            for (let item of products.iPhone.spec) {
-                                let storage_btn = document.createElement('button');
-                                storage_price.appendChild(storage_btn);
-                                storage_btn.innerHTML = item.storage + '<br>' + '$' + item
-                                .price;
-                                // storage_btn.style.width = '10%';
-                                storage_btn.style.height = '120px';
-                                storage_btn.style.fontSize = '20px';
-                                storage_btn.style.fontWeight = '500';
-                                //記憶體＆價格的按鈕
-                                storage_btn.addEventListener('click', () => {
-                                    let total_price = document.getElementById(
-                                        'total_price');
-                                    price_span.innerHTML = '';
-                                    total_price.appendChild(price_span);
-                                    price_span.innerHTML = '價格試算:' + '<br>' + 'NT$' +
-                                        item.price;
-                                    price_span.style.fontSize = '25px';
-                                    price_span.style.fontWeight = 'bold';
-                                })
-                            };
-                        })
+            $jscomp.arrayIterator = function (a) {
+                return {
+                    next: $jscomp.arrayIteratorImpl(a)
+                }
+            };
+            $jscomp.makeIterator = function (a) {
+                var c = "undefined" != typeof Symbol && Symbol.iterator && a[Symbol.iterator];
+                return c ? c.call(a) : $jscomp.arrayIterator(a)
+            };
+            var products = {
+                    iPhone: {
+                        big_picture: "apple_picture/iPhone11_all_pic.png",
+                        feature: [{
+                            color: "\u767d",
+                            colorValue: "#ffffff",
+                            img_src: "apple_picture/iPhone-white.png"
+                        }, {
+                            color: "\u7d05",
+                            colorValue: "#ff0000",
+                            img_src: "apple_picture/iPhone11_red.png"
+                        }, {
+                            color: "\u9ed1",
+                            colorValue: "#000000",
+                            img_src: "apple_picture/iPhone-black.png"
+                        }],
+                        spec: [{
+                            storage: "64GB",
+                            price: 24900
+                        }, {
+                            storage: "128GB",
+                            price: 26900
+                        }, {
+                            storage: "256GB",
+                            price: 30400
+                        }]
+                    },
+                    iPad: {
+                        big_picture: "apple_picture/iPad_all.png",
+                        feature: [{
+                            color: "\u767d",
+                            colorValue: "#ffffff",
+                            img_src: "apple_picture/iPad-silver.png"
+                        }, {
+                            color: "\u73ab\u7470\u91d1",
+                            colorValue: "#FFE4E1",
+                            img_src: "apple_picture/iPad-gold.png"
+                        }, {
+                            color: "\u9ed1",
+                            colorValue: "#000000",
+                            img_src: "apple_picture/iPad-gray.png"
+                        }],
+                        spec: [{
+                            storage: "128GB",
+                            price: 25900
+                        }, {
+                            storage: "256GB",
+                            price: 29400
+                        }, {
+                            storage: "512GB",
+                            price: 36400
+                        }]
+                    },
+                    macBook: {
+                        big_picture: "apple_picture/mbp13-big-picture.png",
+                        feature: [{
+                            color: "\u767d",
+                            colorValue: "#ffffff",
+                            img_src: "apple_picture/mbp13-silver.png"
+                        }, {
+                            color: "\u7070",
+                            colorValue: "#5B5B5B",
+                            img_src: "apple_picture/mbp13-gray.png"
+                        }],
+                        spec: [{
+                            storage: "128GB",
+                            price: 42900
+                        }, {
+                            storage: "256GB",
+                            price: 48900
+                        }]
                     }
-                });
+                },
+                pic = document.getElementById("picture"),
+                feature_color = document.getElementById("feature_color"),
+                storage_price = document.getElementById("storage_price"),
+                btn = document.querySelectorAll(".btn"),
+                price_span = document.createElement("span");
+            btn.forEach(function (a) {
+                a.addEventListener("click", function () {
+                    pic.innerHTML = "";
+                    feature_color.innerHTML = "";
+                    storage_price.innerHTML = "";
+                    price_span.innerHTML = "";
+                    var c = document.createElement("img");
+                    c.setAttribute("src", products[a.innerText].big_picture);
+                    pic.appendChild(c);
+                    c.style.width = "80%";
+                    var d = document.createElement("h3");
+                    d.innerText = "\u984f\u8272";
+                    feature_color.appendChild(d);
+                    d = document.createElement("div");
+                    for (var f = {}, k = $jscomp.makeIterator(products[this.innerText].feature), b = k
+                            .next(); !b.done; f = {
+                            $jscomp$loop$prop$item$2$5: f.$jscomp$loop$prop$item$2$5
+                        }, b = k.next()) {
+                        f.$jscomp$loop$prop$item$2$5 = b.value;
+                        b = document.createElement("button");
+                        var g = document.createElement("div"),
+                            h = document.createElement("span");
+                        d.classList.add("d-flex");
+                        d.classList.add("flex-nowrap");
+                        d.style.marginBottom = "100px";
+                        h.innerHTML = "<br>" + f.$jscomp$loop$prop$item$2$5.color;
+                        h.style.fontSize = "20px";
+                        h.style.marginTop = "100px";
+                        g.style.backgroundColor = "" + f.$jscomp$loop$prop$item$2$5.colorValue;
+                        g.style.width = "30px";
+                        g.style.height =
+                            "30px";
+                        g.style.borderRadius = "50%";
+                        g.classList.add("mx-auto");
+                        b.style.width = "20%";
+                        b.style.height = "120px";
+                        b.style.marginRight = "50px";
+                        b.style.marginTop = "70px";
+                        b.appendChild(g);
+                        b.appendChild(h);
+                        d.appendChild(b);
+                        feature_color.appendChild(d);
+                        b.addEventListener("click", function (a) {
+                            return function () {
+                                c.setAttribute("src", a.$jscomp$loop$prop$item$2$5.img_src);
+                                storage_price.innerHTML = "";
+                                storage_price.style.flexWrap = "nowrap";
+                                storage_price.style.justifyContent = "space-between";
+                                for (var b = {}, d = $jscomp.makeIterator(products.iPhone
+                                            .spec),
+                                        e = d.next(); !e.done; b = {
+                                        $jscomp$loop$prop$item$3$7: b
+                                            .$jscomp$loop$prop$item$3$7
+                                    }, e = d.next()) b.$jscomp$loop$prop$item$3$7 = e.value,
+                                    e = document.createElement("button"), storage_price
+                                    .appendChild(e), e.innerHTML = b
+                                    .$jscomp$loop$prop$item$3$7.storage + "<br>$" + b
+                                    .$jscomp$loop$prop$item$3$7.price, e.style.height =
+                                    "120px", e.style.fontSize = "20px", e.style.fontWeight =
+                                    "500", e.addEventListener("click", function (a) {
+                                        return function () {
+                                            var b = document.getElementById(
+                                                "total_price");
+                                            price_span.innerHTML = "";
+                                            b.appendChild(price_span);
+                                            price_span.innerHTML =
+                                                "\u50f9\u683c\u8a66\u7b97:<br>NT$" +
+                                                a.$jscomp$loop$prop$item$3$7.price;
+                                            price_span.style.fontSize = "25px";
+                                            price_span.style.fontWeight = "bold"
+                                        }
+                                    }(b))
+                            }
+                        }(f))
+                    }
+                })
             });
+            // var products = {
+            //     iPhone: {
+            //         big_picture: 'apple_picture/iPhone11_all_pic.png',
+
+            //         feature: [{
+            //                 color: '白',
+            //                 colorValue: '#ffffff',
+            //                 img_src: 'apple_picture/iPhone-white.png'
+            //             },
+            //             {
+            //                 color: '紅',
+            //                 colorValue: '#ff0000',
+            //                 img_src: 'apple_picture/iPhone11_red.png'
+            //             },
+            //             {
+            //                 color: '黑',
+            //                 colorValue: '#000000',
+            //                 img_src: 'apple_picture/iPhone-black.png'
+            //             }
+            //         ],
+
+            //         spec: [{
+            //                 storage: '64GB',
+            //                 price: 24900
+            //             },
+            //             {
+            //                 storage: '128GB',
+            //                 price: 26900
+            //             },
+            //             {
+            //                 storage: '256GB',
+            //                 price: 30400
+            //             }
+            //         ]
+            //     },
+            //     iPad: {
+            //         big_picture: 'apple_picture/iPad_all.png',
+
+            //         feature: [{
+            //                 color: '白',
+            //                 colorValue: '#ffffff',
+            //                 img_src: 'apple_picture/iPad-silver.png'
+            //             },
+            //             {
+            //                 color: '玫瑰金',
+            //                 colorValue: '#FFE4E1',
+            //                 img_src: 'apple_picture/iPad-gold.png'
+            //             },
+            //             {
+            //                 color: '黑',
+            //                 colorValue: '#000000',
+            //                 img_src: 'apple_picture/iPad-gray.png'
+            //             }
+            //         ],
+            //         spec: [{
+            //                 storage: '128GB',
+            //                 price: 25900
+            //             },
+            //             {
+            //                 storage: '256GB',
+            //                 price: 29400
+            //             },
+            //             {
+            //                 storage: '512GB',
+            //                 price: 36400
+            //             },
+            //         ]
+            //     },
+            //     macBook: {
+            //         big_picture: 'apple_picture/mbp13-big-picture.png',
+            //         feature: [{
+            //                 color: '白',
+            //                 colorValue: '#ffffff',
+            //                 img_src: 'apple_picture/mbp13-silver.png'
+            //             },
+            //             {
+            //                 color: '灰',
+            //                 colorValue: '#5B5B5B',
+            //                 img_src: 'apple_picture/mbp13-gray.png'
+            //             }
+            //         ],
+            //         spec: [{
+            //                 storage: '128GB',
+            //                 price: 42900
+            //             },
+            //             {
+            //                 storage: '256GB',
+            //                 price: 48900
+            //             }
+            //         ]
+            //     }
+            // };
+            // var pic = document.getElementById('picture');
+            // var feature_color = document.getElementById('feature_color');
+            // var storage_price = document.getElementById('storage_price');
+            // var btn = document.querySelectorAll('.btn');
+            // var price_span = document.createElement('span');
+            // btn.forEach((item) => {
+            //     item.addEventListener('click', function () {
+            //         pic.innerHTML = '';
+            //         feature_color.innerHTML = '';
+            //         storage_price.innerHTML = '';
+            //         price_span.innerHTML = '';
+
+            //         // 大圖
+            //         var img = document.createElement('img');
+            //         img.setAttribute('src', products[item.innerText].big_picture);
+            //         pic.appendChild(img);
+            //         img.style.width = '80%';
+
+            //         // 顏色區塊
+            //         var h3 = document.createElement('h3');
+            //         h3.innerText = '顏色';
+            //         feature_color.appendChild(h3);
+            //         var btn_color_div = document.createElement('div');
+            //         for (let item of products[this.innerText].feature) {
+            //             var color_btn = document.createElement('button');
+            //             var circle_div = document.createElement('div');
+            //             var span_color = document.createElement('span');
+
+            //             //color_btn_div
+            //             btn_color_div.classList.add('d-flex');
+            //             btn_color_div.classList.add('flex-nowrap');
+            //             btn_color_div.style.marginBottom = '100px';
+
+
+            //             //span
+            //             span_color.innerHTML = '<br>' + item.color;
+            //             span_color.style.fontSize = '20px';
+            //             span_color.style.marginTop = '100px'
+
+
+            //             //circle_div(顏色圓形)
+            //             circle_div.style.backgroundColor = `${item.colorValue}`;
+            //             circle_div.style.width = '30px';
+            //             circle_div.style.height = '30px';
+            //             circle_div.style.borderRadius = '50%';
+            //             circle_div.classList.add('mx-auto')
+
+            //             //color_btn
+            //             color_btn.style.width = '20%';
+            //             color_btn.style.height = '120px';
+            //             color_btn.style.marginRight = '50px';
+            //             color_btn.style.marginTop = '70px';
+
+            //             //元素appendChild到各自的父層
+            //             color_btn.appendChild(circle_div);
+            //             color_btn.appendChild(span_color);
+            //             btn_color_div.appendChild(color_btn);
+            //             feature_color.appendChild(btn_color_div);
+
+            //             //生成記憶體＆價格的按鈕
+            //             color_btn.addEventListener('click', () => {
+            //                 img.setAttribute('src', item.img_src);
+            //                 storage_price.innerHTML = '';
+            //                 storage_price.style.flexWrap = 'nowrap';
+            //                 storage_price.style.justifyContent = 'space-between';
+
+            //                 for (let item of products.iPhone.spec) {
+            //                     let storage_btn = document.createElement('button');
+            //                     storage_price.appendChild(storage_btn);
+            //                     storage_btn.innerHTML = item.storage + '<br>' + '$' + item
+            //                     .price;
+            //                     // storage_btn.style.width = '10%';
+            //                     storage_btn.style.height = '120px';
+            //                     storage_btn.style.fontSize = '20px';
+            //                     storage_btn.style.fontWeight = '500';
+            //                     //記憶體＆價格的按鈕
+            //                     storage_btn.addEventListener('click', () => {
+            //                         let total_price = document.getElementById(
+            //                             'total_price');
+            //                         price_span.innerHTML = '';
+            //                         total_price.appendChild(price_span);
+            //                         price_span.innerHTML = '價格試算:' + '<br>' + 'NT$' +
+            //                             item.price;
+            //                         price_span.style.fontSize = '25px';
+            //                         price_span.style.fontWeight = 'bold';
+            //                     })
+            //                 };
+            //             })
+            //         }
+            //     });
+            // });
         </script>
 
 

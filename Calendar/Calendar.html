@@ -272,23 +272,33 @@
                                 }
                                 if (o < get_first_day || p > get_month_days) {
                                     o++;
-                                    let current = new Date(year, month - 1, w);
+                                    var current = new Date(year, month - 1, w);
                                     _td.innerText = current.getDate();
                                     w++;
-                                    _td.className = 'text-muted'
-                                    _tr.appendChild(_td);
-                                } else if (p == today) {
-                                    _td.innerText = p;
-                                    storage(_td, year, month, p);
-                                    p++;
-                                    _td.className = 'bg-danger'
-                                    _tr.appendChild(_td);
-                                } else {
-                                    _td.innerText = p;
-                                    storage(_td, year, month, p);
-                                    p++;
-                                    _tr.appendChild(_td);
-                                }
+                                    _td.className = "text-muted"
+                                } else p == today ? (_td.innerText = p, storage(_td, year, month, p), p++, _td
+                                    .className = "bg-danger") : (_td.innerText = p, storage(_td, year, month, p),
+                                    p++);
+                                _tr.appendChild(_td);
+                                // if (o < get_first_day || p > get_month_days) {
+                                //     o++;
+                                //     let current = new Date(year, month - 1, w);
+                                //     _td.innerText = current.getDate();
+                                //     w++;
+                                //     _td.className = 'text-muted'
+                                //     _tr.appendChild(_td);
+                                // } else if (p == today) {
+                                //     _td.innerText = p;
+                                //     storage(_td, year, month, p);
+                                //     p++;
+                                //     _td.className = 'bg-danger'
+                                //     _tr.appendChild(_td);
+                                // } else {
+                                //     _td.innerText = p;
+                                //     storage(_td, year, month, p);
+                                //     p++;
+                                //     _tr.appendChild(_td);
+                                // }
                             }
                             _tbody.appendChild(_tr);
                         }
@@ -345,7 +355,7 @@
                             'day': d,
                             'time': _modal_time,
                             'backgroundcolor': _modal_background_color,
-                            'fontcolor':_modal_font_color,
+                            'fontcolor': _modal_font_color,
                             'event': _modal_event,
                         }
                         localStorage.setItem(_uuid(), JSON.stringify(item));
