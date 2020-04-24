@@ -13,6 +13,13 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <title>Calendar</title>
         <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                box-sizing: border-box;
+            }
+
             body {
                 overflow: hidden;
             }
@@ -25,13 +32,34 @@
                 margin-left: 900px;
                 z-index: 23;
             }
+
+            #MinerMonth,
+            #AddMonth {
+                background-color: seashell;
+            }
+
+            #AddMonth:hover {
+                background-color: lightpink;
+            }
+
+            #MinerMonth:hover {
+                background-color: lightpink;
+            }
+
+            .workday {
+                background-color: lightblue;
+            }
+
+            .holiday {
+                background-color: lightcoral;
+            }
         </style>
     </head>
 
-    <body style="font-family:微軟正黑體">
+    <body>
         <div class="container">
             <button type="button" class="btn btn-danger modal_btn" data-toggle="modal" data-target="#exampleModal1">
-                ＋新增行事曆
+                New
             </button>
             <div class="row d-flex justify-content-center">
                 <div class=" text-right">
@@ -40,7 +68,7 @@
                     </button>
                 </div>
                 <div class="text-center ml-5 mr-5">
-                    <h3 id="month"></h3>
+                    <h3 id="month">月</h3>
                     <h4 id="year"></h4>
                 </div>
                 <div class=" text-left">
@@ -48,20 +76,19 @@
                         <i class="fas fa-angle-right"></i>
                     </button>
                 </div>
-
             </div>
             <div class="row mt-3">
                 <div class="col">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>MON</th>
-                                <th>TUE</th>
-                                <th>WED</th>
-                                <th>THU</th>
-                                <th>FRI</th>
-                                <th>SAT</th>
-                                <th>SUN</th>
+                                <th class="workday">MON</th>
+                                <th class="workday">TUE</th>
+                                <th class="workday">WED</th>
+                                <th class="workday">THU</th>
+                                <th class="workday">FRI</th>
+                                <th class="holiday">SAT</th>
+                                <th class="holiday">SUN</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -74,7 +101,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">行事曆</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">新增待辦事項</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -82,7 +109,7 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col">
-                                        <p>日期 </p>
+                                        <p>日期</p>
                                         <input type="date" id="modal_date" class="form-control" aria-label="Default"
                                             aria-describedby="inputGroup-sizing-default">
                                     </div>
@@ -94,14 +121,21 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p>事項</p>
+                                        <p>顏色</p>
+                                        <input type="color" id="modal_color" aria-label="Default"
+                                            aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>描述</p>
                                         <input type="text" id="modal_event" class="form-control" aria-label="Default"
                                             aria-describedby="inputGroup-sizing-default">
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">關閉</button>
                                 <button type="button" class="btn btn-primary btn_new" id="save">新增</button>
                             </div>
                         </div>
@@ -135,7 +169,7 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1">事項</span>
+                                        <span class="input-group-text" id="basic-addon1">描述</span>
                                     </div>
                                     <input type="text" id="do_event" class="form-control" placeholder=""
                                         aria-label="Username" aria-describedby="basic-addon1">
@@ -143,7 +177,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                                <button type="button" class="btn btn-primary" id="delete">刪除</button>
+                                <button type="button" class="btn btn-danger" id="delete">刪除</button>
                             </div>
                         </div>
                     </div>
@@ -177,8 +211,8 @@
                             current_month = 1;
                             current_year = current_year + 1;
                         }
-                        document.getElementById('month').innerText = current_month;
-                        document.getElementById('year').innerText = current_year;
+                        document.getElementById('month').textContent = current_month;
+                        document.getElementById('year').textContent = current_year;
                     }
                     //減判斷
                     function Miner() {
@@ -187,8 +221,8 @@
                             current_month = 12;
                             current_year = current_year - 1;
                         }
-                        document.getElementById('month').innerText = current_month;
-                        document.getElementById('year').innerText = current_year;
+                        document.getElementById('month').textContent = current_month;
+                        document.getElementById('year').textContent = current_year;
                     }
 
                     //判斷那個月有幾天
@@ -203,13 +237,13 @@
                     function first_day(year, month) {
                         let firstDay = new Date(year, month - 1, 1);
                         // console.log(firstDay);
-                        let get_first_day = firstDay.getDay(); //四月第一天是禮拜三
+                        let get_first_day = firstDay.getDay(); //2020年四月第一天是禮拜三
                         return get_first_day;
                     }
 
                     //日曆主程式
                     function Calendar(year, month, get_first_day, get_month_days) {
-                        var today = new Date().getDate(); //今天日期
+                        var today = new Date().getDate();
                         var o = 1; //any variable
                         var p = 1; //any variable
                         var w = 2 - get_first_day;
@@ -274,7 +308,7 @@
                     //uuid => for localStorage key
                     function _uuid() {
                         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-                            var r = Math.random() * 16 | 0,
+                            let r = Math.random() * 16 | 0,
                                 v = c == 'x' ? r : r & 0x3 | 0x8;
                             return v.toString(16);
                         });
@@ -286,6 +320,7 @@
                         let _modal_time = document.getElementById('modal_time').value;
                         let _modal_event = document.getElementById('modal_event').value;
                         let _modal_date = document.getElementById('modal_date').value;
+                        let _modal_color = document.getElementById('modal_color').value;
                         let arr = _modal_date.split('-');
                         let d = arr[2];
                         let m = arr[1];
@@ -295,6 +330,7 @@
                             'month': m,
                             'day': d,
                             'time': _modal_time,
+                            'color': _modal_color,
                             'event': _modal_event,
                         }
                         localStorage.setItem(_uuid(), JSON.stringify(item));
@@ -320,7 +356,7 @@
                                 _li.style.width = "125px";
                                 _li.style.height = "40px";
                                 _li.style.fontSize = "15px";
-                                _li.style.backgroundColor = 'white';
+                                _li.style.backgroundColor = obj_json.color;
                                 _li.style.fontFamily = 'Arial';
                                 _li.id = obj;
                                 _li.innerText = obj_json.time + " " + obj_json.event;
@@ -349,11 +385,6 @@
                         }
                     }
                 </script>
-
-
-
-
-
 
 
                 <!-- Optional JavaScript -->
