@@ -20,10 +20,6 @@
                 box-sizing: border-box;
             }
 
-            body {
-                overflow: hidden;
-            }
-
             .modal_btn {
                 width: 125px;
                 height: 40px;
@@ -361,7 +357,6 @@
                             if (_year == year && _month == month && _day == p) {
                                 let _li = document.createElement("li");
                                 _li.className = 'list-group-item btn';
-                                _li.style.width = "125px";
                                 _li.style.fontSize = "15px";
                                 _li.style.backgroundColor = obj_json.color;
                                 _li.style.fontFamily = 'Arial';
