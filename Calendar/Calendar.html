@@ -255,8 +255,6 @@
                     //日曆主程式
                     function Calendar(year, month, get_first_day, get_month_days) {
                         let today = new Date().getDate();
-                        let this_month = new Date().getMonth();
-                        let right_now = new Date(year, month - 1, today);
                         let o = 1; //any variable
                         let p = 1; //any variable
                         let w = 2 - get_first_day;
@@ -272,7 +270,7 @@
                                 }
                                 if (o < get_first_day || p > get_month_days) {
                                     o++;
-                                    var current = new Date(year, month - 1, w);
+                                    let current = new Date(year, month - 1, w);
                                     _td.innerText = current.getDate();
                                     w++;
                                     _td.className = "text-muted"
@@ -299,9 +297,7 @@
                             }
                             _tbody.appendChild(_tr);
                         }
-
                     }
-
 
                     document.getElementById('AddMonth').addEventListener('click', () => {
                         reset();
@@ -315,13 +311,13 @@
 
                     document.getElementById('MinerMonth').addEventListener('click', () => {
                         reset();
-                        Miner()
+                        Miner();
                         let month = document.getElementById('month').innerText;
                         let year = document.getElementById('year').innerText;
                         let get_month_days = month_days(year, month);
                         let get_first_day = first_day(year, month);
                         Calendar(year, month, get_first_day, get_month_days)
-                    })
+                    });
 
 
                     //modal part
