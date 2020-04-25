@@ -276,9 +276,7 @@
                                     _td.innerText = current.getDate();
                                     w++;
                                     _td.className = "text-muted"
-                                } else p == today ? (_td.innerText = p, storage(_td, year, month, p), p++, _td
-                                    .className = "bg-danger") : (_td.innerText = p, storage(_td, year, month, p),
-                                    p++);
+                                } else _td.innerText = p, storage(_td, year, month, p), p++;
                                 _tr.appendChild(_td);
                                 // if (o < get_first_day || p > get_month_days) {
                                 //     o++;
@@ -291,7 +289,6 @@
                                 //     _td.innerText = p;
                                 //     storage(_td, year, month, p);
                                 //     p++;
-                                //     _td.className = 'bg-danger'
                                 //     _tr.appendChild(_td);
                                 // } else {
                                 //     _td.innerText = p;
