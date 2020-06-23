@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+
+        <style type="text/css">
+            #result {
+                width: 600px;
+                height: 600px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            #result {
+                width: 600px;
+                height: 600px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            #doRandom {
+                position: relative;
+                top: 100px;
+                left: 650px;
+            }
+
+            .col-3 {
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                background-image: url(2017-Nissan-Gtr-640-x-960.jpg);
+            }
+
+            .check_url {
+                margin-left: 46%;
+                margin-top: 10%;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="result">
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+            <div class="col-3 border"></div>
+        </div>
+        <button id="doRandom" type="button" class="btn btn-primary">Roll !</button>
+        <input type="url" placeholder="給個圖片網址吧" class="check_url" title="盡量用640*960的圖喔">
+        <button class="check_url_btn btn btn-primary">上傳</button>
+
+
+
+
+
+
+
+
+
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+                <!-- Optional JavaScript -->
+                <script>
+                    $(function () {
+                        let n_index = [];
+                        let items = $(".col-3").children().prevObject.toArray();
+                        let pic_width = 150;
+                        let lastIndex = 15;
+                        let ans = [];
+                        let ansZH = [];
+                        initPuzzle();
+                        doChecked();
+        
+                        $(window).resize(function () {
+                            checkIndex();
+                            let width = window.innerWidth;
+                            if (width > 600) {
+                                pic_width = 150;
+                            } else if (width > 400) {
+                                pic_width = 100;
+                            } else {
+                                pic_width = 80;
+                            }
+                            for (let i = 0; i < 16; i++) {
+                                let r = n_index[i];
+                                if (i == 15) {
+                                    r = 15;
+                                }
+                                let goRight = (r % 4) * pic_width;
+                                let goDown = (Math.floor(r / 4)) * pic_width;
+                                $(items[i]).css("left", goRight + "px").css("top", goDown + "px");
+                                $(items[i]).css("background-position-y", (Math.floor(i / 4)) * pic_width * -1 +
+                                    "px").css("background-position-x", (i % 4) * pic_width * -1 + "px");
+                            }
+                        });
+        
+                        function initPuzzle() {
+                            let width = window.innerWidth;
+                            if (width > 600) {
+                                pic_width = 150;
+                            } else if (width > 400) {
+                                pic_width = 100;
+                            } else {
+                                pic_width = 80;
+                            }
+                            n_index = [];
+                            for (let i = 0; i < 16; i++) {
+                                items[i].onclick = doClear;
+                                items[i].value = i;
+                                n_index[n_index.length] = i;
+                                let goRight = (i % 4) * pic_width;
+                                let goDown = (Math.floor(i / 4)) * pic_width;
+                                $(items[i]).css("left", goRight + "px").css("top", goDown + "px");
+                                $(items[i]).css("background-position-y", (Math.floor(i / 4)) * pic_width * -1 + "px")
+                                    .css("background-position-x", (i % 4) * pic_width * -1 + "px");
+                            }
+                        };
+        
+                        function checkIndex() {
+                            for (let a = 0; a < 16; a++) {
+                                $(items[a]).finish();
+                            }
+                        };
+        
+                        $("#doRandom").on("click", function () {
+                            checkIndex();
+                            initPuzzle();
+                            lastIndex = 15;
+                            $(items[15]).css("display", "none");
+                            ans = [];
+                            ansZH = [];
+                            let num = Math.floor(Math.random() * 1000) % 20;
+                            while (ans.length < 20 + num) {
+                                let r = Math.floor(Math.random() * 100) % 16;
+                                doChange(items[n_index.indexOf(r)]);
+                            }
+                        });
+        
+                        function doClear() {
+                            doChange(this);
+                            if (doChecked()) {
+                                $(items[15]).css("display", "block");
+                                for (let a = 0; a < 16; a++) {
+                                    items[a].onclick = null;
+                                }
+                            }
+                        };
+        
+                        function doChange(nowthis) {
+                            let nowIndex = items.indexOf(nowthis);
+                            n_index[15] = lastIndex;
+                            let r = n_index[nowIndex];
+                            if ((lastIndex + 1 == r && lastIndex % 4 != 3) || (lastIndex - 1 == r && lastIndex % 4 !=
+                                0) || (lastIndex - 4 == r || lastIndex + 4 == r)) {
+                                let goRight = (r % 4) * pic_width;
+                                let goDown = (Math.floor(r / 4)) * pic_width;
+                                if (ans[ans.length - 1] == r) {
+                                    ans.pop();
+                                    ansZH.pop();
+                                } else {
+                                    if (lastIndex + 1 == r) {
+                                        ansZH[ansZH.length] = "左";
+                                        ans[ans.length] = r - 1;
+                                    }
+                                    if (lastIndex - 1 == r) {
+                                        ansZH[ansZH.length] = "右";
+                                        ans[ans.length] = r + 1;
+                                    }
+                                    if (lastIndex + 4 == r) {
+                                        ansZH[ansZH.length] = "上";
+                                        ans[ans.length] = r - 4;
+                                    }
+                                    if (lastIndex - 4 == r) {
+                                        ansZH[ansZH.length] = "下";
+                                        ans[ans.length] = r + 4;
+                                    }
+                                }
+                                if (lastIndex + 1 == r) {
+                                    $(nowthis).animate({
+                                        left: (goRight - pic_width) + "px"
+                                    }, 120);
+                                }
+                                if (lastIndex - 1 == r) {
+                                    $(nowthis).animate({
+                                        left: (goRight + pic_width) + "px"
+                                    }, 120);
+                                }
+                                if (lastIndex + 4 == r) {
+                                    $(nowthis).animate({
+                                        top: (goDown - pic_width) + "px"
+                                    }, 120);
+                                }
+                                if (lastIndex - 4 == r) {
+                                    $(nowthis).animate({
+                                        top: (goDown + pic_width) + "px"
+                                    }, 120);
+                                }
+                                n_index[nowIndex] = lastIndex;
+                                lastIndex = r;
+                            }
+                        };
+        
+                        function doChecked() {
+                            for (let i = 0; i < 15; i++) {
+                                if (n_index[i] != i) {
+                                    return false;
+                                }
+                            }
+                            return true;
+                        }
+                    });
+        
+                    $('.check_url_btn').click(function () {
+                        $('.col-3').css('background-image','url(' + $('.check_url').val() + ')')
+                    })
+                </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+    </body>
+
+</html>
