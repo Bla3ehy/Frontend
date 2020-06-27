@@ -11,10 +11,10 @@
                 padding: 0;
                 list-style: none;
                 text-decoration: none;
+                box-sizing: border-box;
             }
 
             .blackTitle {
-                /* width: 100%; */
                 background-color: black;
                 padding: 7px 15px;
                 z-index: 1;
@@ -94,7 +94,6 @@
                 overflow: hidden;
                 text-align: left;
                 display: flex;
-
             }
 
             .littlelogo {
@@ -120,7 +119,6 @@
                 margin-right: 9.5px;
                 padding-top: 7.5px;
                 padding-bottom: 7.5px;
-
             }
 
             .verter {
@@ -156,12 +154,11 @@
             }
 
             .subtitle {
-                width: 1295px;
-                height: 130px;
+                width: 100%;
                 padding: 20px 0px 20px 0px;
                 z-index: 1;
                 display: flex;
-
+                margin: auto;
                 /* background: yellow; */
             }
 
@@ -233,12 +230,10 @@
             }
 
             .slider {
-                /* width: 100%; */
-                height: 950px;
+                width: 100%;
+                height: 800px;
                 margin: auto;
-                margin-bottom: 0px;
                 display: flex;
-                justify-content: center;
                 align-items: center;
             }
 
@@ -252,7 +247,6 @@
                 bottom: 0px;
                 z-index: -2;
                 visibility: visible;
-
             }
 
             .slider_content {
@@ -265,9 +259,11 @@
                 flex-wrap: wrap;
                 text-align: center;
             }
+            .title{
+                margin: auto;
+            }
 
             .slider_content .title {
-                /* width: 100%; */
                 text-align: center;
                 padding: 0px 0px 15px 0px;
                 margin: 0;
@@ -279,7 +275,6 @@
             }
 
             .slider_content .subtitle {
-                /* width: 100%; */
                 height: 50px;
                 text-align: center;
                 font-size: 30px;
@@ -289,6 +284,7 @@
                 padding: 0px 0px -0px 250px;
                 margin-top: -100px;
                 color: #ffffff;
+                margin: 1% 15% 5% 16%;
             }
 
             .slider_content_button {
@@ -296,6 +292,7 @@
                 height: 60px;
                 text-align: center;
                 margin-top: -110px;
+                margin: auto;
             }
 
             .slider_content_button button {
@@ -336,12 +333,8 @@
             }
 
             .three_dots {
-                width: 1265px;
-                text-align: center;
-                align-items: center;
-                position: absolute;
-                bottom: -277px;
-                padding-bottom: 150px;
+                width: 100%;
+                margin-top: 5%;
             }
 
             .three_dots button {
@@ -356,15 +349,16 @@
             }
 
             .companyServices {
-                width: 1295px;
+                width: 100%;
                 height: 816px;
                 margin: 0px;
                 margin-top: -246px;
                 padding: 85px 0px 70px 0px;
+                margin: auto;
             }
 
             .divider {
-                width: 1295px;
+                width: 100%;
                 height: 62px;
                 padding-top: 30px;
                 text-align: center;
@@ -372,7 +366,7 @@
             }
 
             .headingTitle {
-                width: 1295px;
+                width: 100%;
                 height: 42px;
                 text-align: center;
                 font-family: "Montserrat", Sans-serif;
@@ -383,9 +377,10 @@
             }
 
             .rowservices_top {
-                width: 1265px;
+                width: 100%;
                 height: 271px;
                 display: flex;
+                justify-content: center;
                 box-sizing: border-box;
             }
 
@@ -402,7 +397,6 @@
             .sixdots_wrap {
                 width: 421.66px;
                 height: 271px;
-
             }
 
             .house {
@@ -539,10 +533,10 @@
             }
 
             .rowservices_bottom {
-                width: 1265px;
-                height: 271px;
+                width: 100%;
                 display: flex;
-                box-sizing: border-box;
+                justify-content: center;
+                
             }
 
             .pencil_wrap {
@@ -692,15 +686,15 @@
             }
 
             .intro {
-                width: 1295px;
-                height: 501px;
+                width: 100%;
+                
                 padding: 100px 0px 100px 0px;
             }
 
             .totalIntro {
-                width: 1265px;
-                height: 501px;
+                width: 100%;
                 display: flex;
+                justify-content: center;
             }
 
             .leftIntro {
@@ -767,12 +761,10 @@
             }
 
             .leftIntro_button button {
-                width: 163.91px;
-                height: 58px;
-                padding: 22px 37px 22px 37px;
+                width: 26%;
                 background: #2ac5f4;
                 border-color: #2ac5f4;
-
+                border: none;
             }
 
             .leftIntro_button a {
@@ -797,20 +789,13 @@
             }
 
             .building_section {
-                width: 1295px;
-                height: 716px;
-                display: block;
+                width: 100%;
+                padding:0 15% 0 16%;
             }
 
-            .row_top {
-                width: 1295px;
-                height: 358px;
-                display: flex;
-            }
-
-            .row_bottom {
-                width: 1295px;
-                height: 358px;
+            .row_top,.row_bottom {
+                width: 100%;
+                
                 display: flex;
             }
 
@@ -975,19 +960,16 @@
             }
 
             .news {
-                width: 1295px;
-                height: 977.3px;
-                padding-top: 85px;
-                flex-wrap: wrap;
+                width: 100%;
+                padding-top: 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
 
-            .news_wrap {
-                width: 1295px;
-                height: 792.3px;
-            }
 
             .news_wrap_divider {
-                width: 1295px;
+                width: 100%;
                 height: 62px;
                 display: flex;
                 align-items: center;
@@ -995,13 +977,13 @@
             }
 
             .header_wrap {
-                width: 1295px;
+                width: 100%;
                 height: 92px;
                 text-align: center;
             }
 
             .header_wrap h2 {
-                width: 1295px;
+                width: 100%;
                 height: 42px;
                 font-family: "Montserrat", Sans-serif;
                 font-size: 30px;
@@ -1011,10 +993,10 @@
             }
 
             .totalNews {
-                width: 1295px;
-                height: 580.3px;
+                width: 100%;
                 margin-bottom: 0px;
                 display: flex;
+                justify-content: center;
             }
 
             .hospital_news_wrap {
@@ -1258,11 +1240,10 @@
             }
 
             .button_container {
-                width: 1265px;
-                height: 58px;
-                justify-content: center;
+                width: 100%;
                 display: flex;
-                flex-flow: row nowrap;
+                justify-content: center;
+                margin-bottom: 2%;
             }
 
             .button_container button {
@@ -1272,7 +1253,12 @@
                 background: #2ac5f4;
                 border-style: solid;
                 border-width: 1px;
-                border-color: #2ac5f4;
+                background: #2ac5f4;
+                cursor: pointer;
+            }
+            .button_container button:hover{
+                transition: .5s;
+                background-color: #0691bb;
             }
 
             .button_container a {
@@ -1282,11 +1268,11 @@
             }
 
             .final_section {
-                width: 1295px;
-                height: 581.98px;
+                width:100%;
                 background-color: #333333;
-                padding: 130px 0px 50px 0px;
+                padding: 8% 0px 5% 0px;
                 display: flex;
+                justify-content: space-around;
             }
 
             .customer_thanks {
@@ -1411,7 +1397,6 @@
             .recent_comments_subtitle {
                 width: 291.25px;
                 height: 52px;
-
             }
 
             .recent_comments_subtitle a {
@@ -1536,11 +1521,12 @@
                 letter-spacing: 0px;
             }
             .finalBar{
-                width: 1295px;
+                width: 100%;
                 height: 53px;
                 background-color: #272727;
                 padding: 15px 0px 8px 0px;
                 display: flex;
+                justify-content: space-between;
             }
             .finalBar_author{
                 width: 632.5px;
@@ -1626,7 +1612,7 @@
                 <img src="building/slide-1.png" alt="picture">
             </div>
             <div class="slider_content">
-                <div class="title">
+                <div class="title" style="margin: auto;">
                     <h5 valign="top" ;>CONSTRUCTION</h5>
                 </div>
                 <div class="subtitle">
